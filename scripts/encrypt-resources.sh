@@ -1,19 +1,15 @@
 #!/bin/bash
 # encrypt-resources.sh
-# 使用 credentials.txt 中的所有凭据加密组内资源页面
+# 使用 StaticCrypt 加密组内资源页面
 #
 # 用法：
 #   1. 先构建站点：bundle exec jekyll build
 #   2. 运行加密：./scripts/encrypt-resources.sh
 #
-# 凭据格式（scripts/credentials.txt）：
-#   每行一个，格式为 用户名:密码
-#   加密密钥 = "用户名:密码"（整行作为密钥）
-#
-# 管理操作：
-#   添加成员 → 在 credentials.txt 新增一行，重新运行本脚本
-#   撤销权限 → 删除对应行，重新运行本脚本
-#   修改密码 → 修改对应行，重新运行本脚本
+# 密码管理：
+#   密码存储在 scripts/credentials.txt 第一行（已 gitignore）
+#   格式：直接写密码，如 Qcl@2026
+#   人员变动时修改密码并通知所有成员
 
 set -e
 
@@ -23,8 +19,8 @@ CRED_FILE="$SCRIPT_DIR/credentials.txt"
 INPUT="$PROJECT_DIR/_site/resources/index.html"
 
 if [ ! -f "$CRED_FILE" ]; then
-  echo "错误：凭据文件不存在 $CRED_FILE"
-  echo "请创建凭据文件，每行格式：用户名:密码"
+  echo "错误：密码文件不存在 $CRED_FILE"
+  echo "请创建文件，第一行写入密码"
   exit 1
 fi
 
@@ -34,38 +30,35 @@ if [ ! -f "$INPUT" ]; then
   exit 1
 fi
 
-# 读取所有凭据，构建密码参数
-PASSWORDS=()
+# 读取密码（第一个非空非注释行）
+PASSWORD=""
 while IFS= read -r line || [ -n "$line" ]; do
-  # 跳过空行和注释
   line="$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
   [[ -z "$line" || "$line" == \#* ]] && continue
-  PASSWORDS+=("$line")
+  PASSWORD="$line"
+  break
 done < "$CRED_FILE"
 
-if [ ${#PASSWORDS[@]} -eq 0 ]; then
-  echo "错误：凭据文件中没有有效账号"
+if [ -z "$PASSWORD" ]; then
+  echo "错误：密码文件中没有有效密码"
   exit 1
 fi
 
-echo "找到 ${#PASSWORDS[@]} 个账号，开始加密..."
+echo "正在加密组内资源页面..."
 
-# 构建 staticrypt 命令
-CMD=(npx staticrypt "$INPUT" -o "$INPUT")
-for pw in "${PASSWORDS[@]}"; do
-  CMD+=(-p "$pw")
-done
-
-# 执行加密
-"${CMD[@]}"
+npx staticrypt "$INPUT" \
+  -p "$PASSWORD" \
+  --short \
+  -o "$INPUT" \
+  --template-title "组内资源 — QCL" \
+  --template-instructions "请输入课题组密码以访问内部资源" \
+  --template-placeholder "请输入密码" \
+  --template-button "登 录" \
+  --template-error "密码错误，请重试" \
+  --template-remember "记住密码" \
+  --template-color-primary "#4adeaa" \
+  --template-color-secondary "#080c10"
 
 echo ""
-echo "加密完成！有效账号："
-while IFS= read -r line || [ -n "$line" ]; do
-  line="$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
-  [[ -z "$line" || "$line" == \#* ]] && continue
-  username="${line%%:*}"
-  echo "  - $username"
-done < "$CRED_FILE"
-echo ""
-echo "部署 _site/ 目录即可生效。"
+echo "加密完成！"
+echo "部署 _site/ 目录或 push 到 GitHub 即可生效。"
