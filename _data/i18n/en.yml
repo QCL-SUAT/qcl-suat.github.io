@@ -10,9 +10,9 @@ nav:
 
 research_sub:
   superconducting-qubit: "Superconducting Qubits"
-  quantum-control: "Quantum Control"
-  quantum-error-correction: "Quantum Error Correction"
-  quantum-software: "Quantum Software"
+  quantum-control: "Quantum Control Schemes"
+  control-systems-software: "Control Systems & Software"
+  quantum-foundations: "Quantum Foundations & Applications"
 
 team_sub:
   faculty: "Faculty"

@@ -17,7 +17,7 @@
   authors: "C. Professor, A. Professor"
   journal: "Review of Scientific Instruments"
   year: 2025
-  category: "quantum-control"
+  category: "control-systems-software"
   doi: "10.1063/5.0xxxxxx"
 
 - title: "Multiplexed readout of superconducting qubits using frequency-division"
@@ -31,7 +31,7 @@
   authors: "A. Professor, B. Professor, D. Student"
   journal: "Nature Physics"
   year: 2025
-  category: "quantum-error-correction"
+  category: "quantum-foundations"
   doi: "10.1038/s41567-025-xxxxx"
   arxiv: "2025.xxxxx"
 
@@ -39,12 +39,12 @@
   authors: "C. Professor, F. Student"
   journal: "Quantum Science and Technology"
   year: 2026
-  category: "quantum-software"
+  category: "control-systems-software"
   arxiv: "2026.xxxxx"
 
 - title: "Automated calibration framework for multi-qubit systems"
   authors: "C. Professor, B. Professor"
   journal: "IEEE Transactions on Quantum Engineering"
   year: 2025
-  category: "quantum-software"
+  category: "control-systems-software"
   doi: "10.1109/TQE.2025.xxxxxxx"

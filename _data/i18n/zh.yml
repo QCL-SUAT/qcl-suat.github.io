@@ -10,9 +10,9 @@ nav:
 
 research_sub:
   superconducting-qubit: "超导量子比特"
-  quantum-control: "量子测控系统"
-  quantum-error-correction: "量子纠错"
-  quantum-software: "量子软件"
+  quantum-control: "量子调控方案"
+  control-systems-software: "测控系统与软件"
+  quantum-foundations: "量子基础与应用"
 
 team_sub:
   faculty: "教师"
