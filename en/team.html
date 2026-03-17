@@ -1,0 +1,82 @@
+---
+layout: default
+title: "Team"
+lang: "en"
+permalink: /en/team/
+---
+{% assign t = site.data.i18n.en %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.nav.team }}</h1>
+
+  <!-- Faculty -->
+  {% assign faculty = site.data.team | where: "category", "faculty" %}
+  {% if faculty.size > 0 %}
+  <div class="team-section" id="faculty">
+    <h2 class="team-section-title">{{ t.team_sub.faculty }}</h2>
+    <div class="team-grid">
+      {% for member in faculty %}
+      {% include team-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- PhD Students -->
+  {% assign phd = site.data.team | where: "category", "phd" %}
+  {% if phd.size > 0 %}
+  <div class="team-section" id="phd">
+    <h2 class="team-section-title">{{ t.team_sub.phd }}</h2>
+    <div class="team-grid">
+      {% for member in phd %}
+      {% include team-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Master Students -->
+  {% assign master = site.data.team | where: "category", "master" %}
+  {% if master.size > 0 %}
+  <div class="team-section" id="master">
+    <h2 class="team-section-title">{{ t.team_sub.master }}</h2>
+    <div class="team-grid">
+      {% for member in master %}
+      {% include team-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Undergrad Interns -->
+  {% assign undergrad = site.data.team | where: "category", "undergrad" %}
+  {% if undergrad.size > 0 %}
+  <div class="team-section" id="undergrad">
+    <h2 class="team-section-title">{{ t.team_sub.undergrad }}</h2>
+    <div class="team-grid">
+      {% for member in undergrad %}
+      {% include team-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Alumni -->
+  {% assign alumni = site.data.team | where: "category", "alumni" %}
+  {% if alumni.size > 0 %}
+  <div class="team-section" id="alumni">
+    <h2 class="team-section-title">{{ t.team_sub.alumni }}</h2>
+    <div class="alumni-list">
+      {% for member in alumni %}
+      <div class="alumni-item">
+        <div>
+          <span class="alumni-name">{{ member.name_en }}</span>
+          <span class="alumni-role">{{ member.role_en }}</span>
+        </div>
+        <span class="alumni-destination">{{ member.destination_en }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>

@@ -1,0 +1,18 @@
+<div class="team-card"{% if member.scholar_url and member.category == "faculty" %} onclick="window.open('{{ member.scholar_url }}', '_blank')" style="cursor:pointer"{% endif %}>
+  <div class="team-avatar">
+    {% if member.photo != "" %}
+    <img src="{{ member.photo | relative_url }}" alt="{{ member.name }}">
+    {% else %}
+    👤
+    {% endif %}
+  </div>
+  <div class="team-name">{% if page.lang == "en" %}{{ member.name_en }}{% else %}{{ member.name }}{% endif %}</div>
+  <div class="team-role">{% if page.lang == "en" %}{{ member.role_en }}{% else %}{{ member.role }}{% endif %}</div>
+  <div class="team-research">{% if page.lang == "en" %}{{ member.research_en }}{% else %}{{ member.research }}{% endif %}</div>
+  {% if member.bio %}
+  <div class="team-bio">{% if page.lang == "en" %}{{ member.bio_en }}{% else %}{{ member.bio }}{% endif %}</div>
+  {% endif %}
+  {% if member.year %}
+  <div class="team-year">{{ member.year }}</div>
+  {% endif %}
+</div>

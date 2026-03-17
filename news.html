@@ -1,0 +1,16 @@
+---
+layout: default
+title: "新闻动态"
+permalink: /news/
+---
+{% assign t = site.data.i18n.zh %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.nav.news }}</h1>
+
+  <div class="news-list">
+    {% for post in site.posts %}
+    {% include news-card.html %}
+    {% endfor %}
+  </div>
+</div>

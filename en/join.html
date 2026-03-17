@@ -1,0 +1,78 @@
+---
+layout: default
+title: "Join Us"
+lang: "en"
+permalink: /en/join/
+---
+{% assign t = site.data.i18n.en %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.join_page.title }}</h1>
+  <p class="page-subtitle">{{ t.join_page.subtitle }}</p>
+
+  <!-- PhD -->
+  <div class="join-tier">
+    <h2 class="join-tier-title">{{ t.join_page.phd }}</h2>
+
+    <h3 class="join-subtitle">{{ t.join_page.background }}</h3>
+    <ul class="join-list">
+      <li>Master's degree in Physics, Electrical Engineering, Computer Science, or related fields</li>
+      <li>Background in quantum mechanics or solid-state physics</li>
+      <li>Research experience preferred</li>
+    </ul>
+
+    <h3 class="join-subtitle">{{ t.join_page.open_topics }}</h3>
+    <ul class="join-list">
+      <li>Novel superconducting qubit architecture design and optimization</li>
+      <li>Experimental implementation of quantum error correction codes</li>
+      <li>Calibration and control of multi-qubit quantum processors</li>
+    </ul>
+  </div>
+
+  <!-- Master -->
+  <div class="join-tier">
+    <h2 class="join-tier-title">{{ t.join_page.master }}</h2>
+
+    <h3 class="join-subtitle">{{ t.join_page.background }}</h3>
+    <ul class="join-list">
+      <li>Bachelor's degree in Physics, Electrical Engineering, Computer Science, or related fields</li>
+      <li>Basic programming skills (Python preferred)</li>
+      <li>Strong interest in quantum computing</li>
+    </ul>
+
+    <h3 class="join-subtitle">{{ t.join_page.open_topics }}</h3>
+    <ul class="join-list">
+      <li>Hardware and software development for qubit control systems</li>
+      <li>Quantum circuit compilation and optimization algorithms</li>
+      <li>Simulation and design of superconducting quantum chips</li>
+    </ul>
+  </div>
+
+  <!-- Undergrad -->
+  <div class="join-tier">
+    <h2 class="join-tier-title">{{ t.join_page.undergrad }}</h2>
+
+    <h3 class="join-subtitle">{{ t.join_page.background }}</h3>
+    <ul class="join-list">
+      <li>Undergraduate students in Physics, Electrical Engineering, Computer Science, or related fields</li>
+      <li>Basic foundation in mathematics and physics</li>
+      <li>Enthusiasm to learn and team spirit</li>
+    </ul>
+
+    <h3 class="join-subtitle">{{ t.join_page.open_topics }}</h3>
+    <ul class="join-list">
+      <li>Fundamental quantum computing experiments</li>
+      <li>Quantum software tool development</li>
+      <li>Literature survey and data analysis</li>
+    </ul>
+  </div>
+
+  <!-- Contact -->
+  <div class="join-contact">
+    <h3>{{ t.join_page.contact }}</h3>
+    <p>
+      To apply, please send your CV to <a href="mailto:professor.a@suat-sz.edu.cn">professor.a@suat-sz.edu.cn</a>
+      with the subject line "Apply to QCL — [Name] — [Degree Level]".
+    </p>
+  </div>
+</div>

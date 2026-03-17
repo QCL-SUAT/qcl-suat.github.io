@@ -1,0 +1,67 @@
+nav:
+  home: "首页"
+  research: "研究方向"
+  team: "团队成员"
+  news: "新闻动态"
+  join: "加入我们"
+  resources: "组内资源"
+  lang_toggle: "EN"
+  lang_toggle_url: "/en/"
+
+research_sub:
+  superconducting-qubit: "超导量子比特"
+  quantum-control: "量子测控系统"
+  quantum-error-correction: "量子纠错"
+  quantum-software: "量子软件"
+
+team_sub:
+  faculty: "教师"
+  phd: "博士研究生"
+  master: "硕士研究生"
+  undergrad: "本科实习生"
+  alumni: "毕业成员及去向"
+
+hero:
+  title: "QCL"
+  subtitle: "量子计算实验室"
+  subtitle_en: "Quantum Computing Laboratory"
+  affiliation: "算力与微电子学院 · AI 研究院"
+  desc: "探索量子计算前沿技术<br>聚焦超导量子比特设计与测控"
+
+section:
+  latest_news: "最新动态"
+  research: "研究方向"
+  team: "团队成员"
+  read_more: "阅读全文 →"
+  related_papers: "相关论文"
+  back_to_news: "← 返回新闻列表"
+  back_to_research: "← 返回研究方向"
+
+join_page:
+  title: "加入我们"
+  subtitle: "欢迎对量子计算感兴趣的同学加入 QCL"
+  undergrad: "本科实习生"
+  master: "硕士研究生"
+  phd: "博士研究生"
+  background: "背景要求"
+  open_topics: "开放课题"
+  benefits: "待遇与支持"
+  contact: "联系方式"
+  apply_process: "申请流程"
+
+resources_page:
+  title: "组内资源"
+  subtitle: "请使用课题组账号登录"
+  username: "用户名"
+  username_placeholder: "请输入用户名"
+  password: "密码"
+  password_placeholder: "请输入密码"
+  login: "登 录"
+  error: "用户名或密码错误，请重试。"
+  note: "仅限课题组成员访问"
+
+footer:
+  copyright: "© 2026 QCL — 量子计算实验室"
+  university: "深圳理工大学"
+  cme: "算力与微电子学院"
+  ai: "AI 研究院"

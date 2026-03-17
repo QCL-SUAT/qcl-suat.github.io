@@ -1,0 +1,41 @@
+---
+layout: default
+title: "组内资源"
+permalink: /resources/
+---
+{% assign t = site.data.i18n.zh %}
+
+<div class="login-wrapper">
+  <div class="login-box">
+    <div class="login-icon">🔐</div>
+    <h2 class="login-title">{{ t.resources_page.title }}</h2>
+    <p class="login-subtitle">{{ t.resources_page.subtitle }}</p>
+    <form id="login-form" onsubmit="return false;">
+      <div class="form-group">
+        <label class="form-label">{{ t.resources_page.username }}</label>
+        <input type="text" class="form-input" id="username" placeholder="{{ t.resources_page.username_placeholder }}" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label class="form-label">{{ t.resources_page.password }}</label>
+        <input type="password" class="form-input" id="password" placeholder="{{ t.resources_page.password_placeholder }}" autocomplete="current-password">
+      </div>
+      <button type="submit" class="login-btn" onclick="handleLogin()">{{ t.resources_page.login }}</button>
+    </form>
+    <div class="login-error" id="login-error">{{ t.resources_page.error }}</div>
+    <p class="login-note">{{ t.resources_page.note }}</p>
+  </div>
+</div>
+
+<script>
+function handleLogin() {
+  var username = document.getElementById('username').value.trim();
+  var password = document.getElementById('password').value.trim();
+  if (!username || !password) {
+    document.getElementById('login-error').classList.add('show');
+    return;
+  }
+  // StaticCrypt will replace this with actual decryption logic.
+  // The combined key is username:password
+  document.getElementById('login-error').classList.add('show');
+}
+</script>

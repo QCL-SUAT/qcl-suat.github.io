@@ -1,0 +1,38 @@
+title: "QCL — 量子计算实验室"
+description: "Quantum Computing Laboratory"
+url: "https://qcl-suat.github.io"
+baseurl: ""
+markdown: kramdown
+
+collections:
+  research:
+    output: true
+    permalink: /research/:slug/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: "zh"
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope:
+      type: "research"
+    values:
+      layout: "research-detail"
+      lang: "zh"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - docs
+  - README.md
+  - scripts

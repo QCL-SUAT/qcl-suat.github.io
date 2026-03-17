@@ -1,0 +1,17 @@
+---
+layout: default
+title: "News"
+lang: "en"
+permalink: /en/news/
+---
+{% assign t = site.data.i18n.en %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.nav.news }}</h1>
+
+  <div class="news-list">
+    {% for post in site.posts %}
+    {% include news-card.html %}
+    {% endfor %}
+  </div>
+</div>

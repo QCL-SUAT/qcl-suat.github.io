@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Research"
+lang: "en"
+permalink: /en/research/
+---
+{% assign t = site.data.i18n.en %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.section.research }}</h1>
+
+  <div class="research-grid">
+    {% for item in site.data.research %}
+    {% include research-card.html %}
+    {% endfor %}
+  </div>
+</div>

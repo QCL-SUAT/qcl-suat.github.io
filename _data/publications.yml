@@ -1,0 +1,50 @@
+- title: "High-coherence transmon qubit with improved fabrication process"
+  authors: "A. Professor, B. Professor, C. Professor"
+  journal: "Physical Review Letters"
+  year: 2026
+  category: "superconducting-qubit"
+  doi: "10.1103/PhysRevLett.xxx.xxxxxx"
+  arxiv: "2026.xxxxx"
+
+- title: "Fluxonium qubit with millisecond coherence time"
+  authors: "B. Professor, A. Professor"
+  journal: "Nature Communications"
+  year: 2025
+  category: "superconducting-qubit"
+  doi: "10.1038/s41467-025-xxxxx"
+
+- title: "FPGA-based real-time feedback control for superconducting qubits"
+  authors: "C. Professor, A. Professor"
+  journal: "Review of Scientific Instruments"
+  year: 2025
+  category: "quantum-control"
+  doi: "10.1063/5.0xxxxxx"
+
+- title: "Multiplexed readout of superconducting qubits using frequency-division"
+  authors: "B. Professor, C. Professor"
+  journal: "Applied Physics Letters"
+  year: 2025
+  category: "quantum-control"
+  arxiv: "2025.xxxxx"
+
+- title: "Experimental demonstration of surface code on superconducting processor"
+  authors: "A. Professor, B. Professor, D. Student"
+  journal: "Nature Physics"
+  year: 2025
+  category: "quantum-error-correction"
+  doi: "10.1038/s41567-025-xxxxx"
+  arxiv: "2025.xxxxx"
+
+- title: "Efficient quantum circuit compilation for superconducting architectures"
+  authors: "C. Professor, F. Student"
+  journal: "Quantum Science and Technology"
+  year: 2026
+  category: "quantum-software"
+  arxiv: "2026.xxxxx"
+
+- title: "Automated calibration framework for multi-qubit systems"
+  authors: "C. Professor, B. Professor"
+  journal: "IEEE Transactions on Quantum Engineering"
+  year: 2025
+  category: "quantum-software"
+  doi: "10.1109/TQE.2025.xxxxxxx"

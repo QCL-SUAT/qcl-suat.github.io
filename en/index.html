@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Home"
+lang: "en"
+permalink: /en/
+---
+{% assign t = site.data.i18n.en %}
+
+{% include hero.html %}
+
+<div class="container">
+  <!-- Latest News -->
+  <div class="section">
+    <h2 class="section-title">{{ t.section.latest_news }}</h2>
+    <div class="news-list">
+      {% for post in site.posts limit:3 %}
+      {% include news-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Research Directions -->
+  <div class="section">
+    <h2 class="section-title">{{ t.section.research }}</h2>
+    <div class="research-grid">
+      {% for item in site.data.research %}
+      {% include research-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Team Preview -->
+  <div class="section">
+    <h2 class="section-title">{{ t.section.team }}</h2>
+    <div class="team-grid">
+      {% assign faculty = site.data.team | where: "category", "faculty" %}
+      {% for member in faculty %}
+      {% include team-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

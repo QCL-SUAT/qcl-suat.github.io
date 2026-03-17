@@ -1,0 +1,16 @@
+---
+layout: default
+title: "研究方向"
+permalink: /research/
+---
+{% assign t = site.data.i18n.zh %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.section.research }}</h1>
+
+  <div class="research-grid">
+    {% for item in site.data.research %}
+    {% include research-card.html %}
+    {% endfor %}
+  </div>
+</div>

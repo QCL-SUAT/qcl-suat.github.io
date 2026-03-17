@@ -1,0 +1,14 @@
+{% assign t = site.data.i18n[page.lang] %}
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">{{ t.hero.title }}</h1>
+    <p class="hero-subtitle">{{ t.hero.subtitle }}</p>
+    {% if t.hero.subtitle_en != "" %}
+    <p class="hero-subtitle-en">{{ t.hero.subtitle_en }}</p>
+    {% endif %}
+    <div class="hero-divider"></div>
+    <p class="hero-desc">{{ t.hero.desc }}</p>
+  </div>
+</section>

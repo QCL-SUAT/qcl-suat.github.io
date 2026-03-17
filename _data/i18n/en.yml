@@ -1,0 +1,67 @@
+nav:
+  home: "Home"
+  research: "Research"
+  team: "Team"
+  news: "News"
+  join: "Join Us"
+  resources: "Lab Resources"
+  lang_toggle: "中"
+  lang_toggle_url: "/"
+
+research_sub:
+  superconducting-qubit: "Superconducting Qubits"
+  quantum-control: "Quantum Control"
+  quantum-error-correction: "Quantum Error Correction"
+  quantum-software: "Quantum Software"
+
+team_sub:
+  faculty: "Faculty"
+  phd: "PhD Students"
+  master: "Master Students"
+  undergrad: "Undergraduate Interns"
+  alumni: "Alumni"
+
+hero:
+  title: "QCL"
+  subtitle: "Quantum Computing Laboratory"
+  subtitle_en: ""
+  affiliation: "School of Computing and Microelectronics · AI Research Institute"
+  desc: "Exploring frontiers in quantum computing<br>Focused on superconducting qubit design and control"
+
+section:
+  latest_news: "Latest News"
+  research: "Research"
+  team: "Team"
+  read_more: "Read more →"
+  related_papers: "Publications"
+  back_to_news: "← Back to News"
+  back_to_research: "← Back to Research"
+
+join_page:
+  title: "Join Us"
+  subtitle: "We welcome students interested in quantum computing"
+  undergrad: "Undergraduate Interns"
+  master: "Master's Students"
+  phd: "PhD Students"
+  background: "Requirements"
+  open_topics: "Open Topics"
+  benefits: "Support"
+  contact: "Contact"
+  apply_process: "How to Apply"
+
+resources_page:
+  title: "Lab Resources"
+  subtitle: "Please log in with your lab account"
+  username: "Username"
+  username_placeholder: "Enter username"
+  password: "Password"
+  password_placeholder: "Enter password"
+  login: "Log In"
+  error: "Invalid username or password."
+  note: "Lab members only"
+
+footer:
+  copyright: "© 2026 QCL — Quantum Computing Laboratory"
+  university: "Shenzhen University of Advanced Technology"
+  cme: "School of Computing and Microelectronics"
+  ai: "AI Research Institute"

@@ -1,0 +1,77 @@
+---
+layout: default
+title: "加入我们"
+permalink: /join/
+---
+{% assign t = site.data.i18n.zh %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.join_page.title }}</h1>
+  <p class="page-subtitle">{{ t.join_page.subtitle }}</p>
+
+  <!-- PhD -->
+  <div class="join-tier">
+    <h2 class="join-tier-title">{{ t.join_page.phd }}</h2>
+
+    <h3 class="join-subtitle">{{ t.join_page.background }}</h3>
+    <ul class="join-list">
+      <li>物理、电子工程、计算机等相关专业硕士学位</li>
+      <li>具备量子力学或固态物理基础</li>
+      <li>有科研经验者优先</li>
+    </ul>
+
+    <h3 class="join-subtitle">{{ t.join_page.open_topics }}</h3>
+    <ul class="join-list">
+      <li>新型超导量子比特架构设计与优化</li>
+      <li>量子纠错码的实验实现</li>
+      <li>多比特量子处理器的标定与控制</li>
+    </ul>
+  </div>
+
+  <!-- Master -->
+  <div class="join-tier">
+    <h2 class="join-tier-title">{{ t.join_page.master }}</h2>
+
+    <h3 class="join-subtitle">{{ t.join_page.background }}</h3>
+    <ul class="join-list">
+      <li>物理、电子工程、计算机等相关专业本科学位</li>
+      <li>具备基本的编程能力（Python 优先）</li>
+      <li>对量子计算有浓厚兴趣</li>
+    </ul>
+
+    <h3 class="join-subtitle">{{ t.join_page.open_topics }}</h3>
+    <ul class="join-list">
+      <li>量子比特测控系统的软硬件开发</li>
+      <li>量子线路编译与优化算法</li>
+      <li>超导量子芯片的仿真与设计</li>
+    </ul>
+  </div>
+
+  <!-- Undergrad -->
+  <div class="join-tier">
+    <h2 class="join-tier-title">{{ t.join_page.undergrad }}</h2>
+
+    <h3 class="join-subtitle">{{ t.join_page.background }}</h3>
+    <ul class="join-list">
+      <li>物理、电子工程、计算机等相关专业在读本科生</li>
+      <li>具备基本的数学和物理基础</li>
+      <li>有学习热情和团队合作精神</li>
+    </ul>
+
+    <h3 class="join-subtitle">{{ t.join_page.open_topics }}</h3>
+    <ul class="join-list">
+      <li>量子计算基础实验</li>
+      <li>量子软件工具开发</li>
+      <li>文献调研与数据分析</li>
+    </ul>
+  </div>
+
+  <!-- Contact -->
+  <div class="join-contact">
+    <h3>{{ t.join_page.contact }}</h3>
+    <p>
+      如有意向，请将简历发送至 <a href="mailto:professor.a@suat-sz.edu.cn">professor.a@suat-sz.edu.cn</a>，
+      邮件标题注明「申请加入 QCL — 姓名 — 学历层次」。
+    </p>
+  </div>
+</div>
