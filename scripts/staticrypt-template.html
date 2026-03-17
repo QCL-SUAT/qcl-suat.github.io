@@ -107,6 +107,9 @@
         </div>
 
         <script>
+            // 多用户密钥映射（构建时注入）
+            const userKeys = "__USER_KEYS_PLACEHOLDER__";
+
             const staticryptInitiator = /*[|js_staticrypt|]*/0;
             const templateError = "/*[|template_error|]*/0",
                 isRememberEnabled = /*[|is_remember_enabled|]*/0,
@@ -120,6 +123,43 @@
             };
 
             const staticrypt = staticryptInitiator.init(staticryptConfig, templateConfig);
+
+            // ---- 多用户解密工具函数 ----
+
+            async function sha256hex(str) {
+                var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+                return Array.from(new Uint8Array(buf)).map(function(b) {
+                    return b.toString(16).padStart(2, '0');
+                }).join('');
+            }
+
+            function hexToBytes(hex) {
+                var bytes = new Uint8Array(hex.length / 2);
+                for (var i = 0; i < hex.length; i += 2) {
+                    bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+                }
+                return bytes;
+            }
+
+            async function decryptMasterKey(entry, password, username) {
+                var enc = new TextEncoder();
+                var keyMaterial = await crypto.subtle.importKey(
+                    'raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']
+                );
+                var key = await crypto.subtle.deriveKey(
+                    { name: 'PBKDF2', salt: enc.encode(username), iterations: 100000, hash: 'SHA-256' },
+                    keyMaterial,
+                    { name: 'AES-CBC', length: 256 },
+                    false,
+                    ['decrypt']
+                );
+                var iv = hexToBytes(entry.iv);
+                var data = hexToBytes(entry.data);
+                var decrypted = await crypto.subtle.decrypt({ name: 'AES-CBC', iv: iv }, key, data);
+                return new TextDecoder().decode(decrypted);
+            }
+
+            // ---- 页面逻辑 ----
 
             window.onload = async function () {
                 const { isSuccessful } = await staticrypt.handleDecryptOnLoad();
@@ -138,18 +178,32 @@
                 var username = document.getElementById("staticrypt-username").value.trim();
                 var password = document.getElementById("staticrypt-password").value;
                 var errorEl = document.getElementById("staticrypt-error");
+                errorEl.classList.remove("show");
 
                 if (!username || !password) {
                     errorEl.classList.add("show");
                     return;
                 }
 
-                // 拼接 username:password 作为解密密钥
-                var combinedKey = username + ":" + password;
-                var isRememberChecked = document.getElementById("staticrypt-remember").checked;
+                try {
+                    // 1. 用 SHA-256(username) 查找该用户的加密主密钥
+                    var usernameHash = await sha256hex(username);
+                    var userEntry = userKeys[usernameHash];
+                    if (!userEntry) {
+                        errorEl.classList.add("show");
+                        return;
+                    }
 
-                var { isSuccessful } = await staticrypt.handleDecryptionOfPage(combinedKey, isRememberChecked);
-                if (!isSuccessful) {
+                    // 2. 用用户密码解出主密钥
+                    var masterKey = await decryptMasterKey(userEntry, password, username);
+
+                    // 3. 用主密钥解密页面
+                    var isRememberChecked = document.getElementById("staticrypt-remember").checked;
+                    var { isSuccessful } = await staticrypt.handleDecryptionOfPage(masterKey, isRememberChecked);
+                    if (!isSuccessful) {
+                        errorEl.classList.add("show");
+                    }
+                } catch (err) {
                     errorEl.classList.add("show");
                 }
             });

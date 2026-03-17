@@ -42,24 +42,12 @@ jobs:
           JEKYLL_ENV: production
 
       - name: Encrypt resources page
+        env:
+          CREDS: ${{ secrets.RESOURCES_CREDENTIAL }}
         run: |
-          TMPDIR=$(mktemp -d)
-          npx staticrypt _site/resources/index.html \
-            -p "${{ secrets.RESOURCES_CREDENTIAL }}" \
-            --short \
-            -d "$TMPDIR" \
-            -c false \
-            -t scripts/staticrypt-template.html \
-            --template-title "组内资源 — QCL" \
-            --template-instructions "请输入课题组凭据以访问内部资源" \
-            --template-placeholder "请输入密码" \
-            --template-button "登 录" \
-            --template-error "用户名或密码错误，请重试" \
-            --template-remember "记住登录状态" \
-            --template-color-primary "#4adeaa" \
-            --template-color-secondary "#080c10"
-          cp "$TMPDIR/index.html" _site/resources/index.html
-          rm -rf "$TMPDIR"
+          printf '%s' "$CREDS" > /tmp/creds.txt
+          CRED_FILE=/tmp/creds.txt node scripts/encrypt-multi-user.js
+          rm -f /tmp/creds.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
