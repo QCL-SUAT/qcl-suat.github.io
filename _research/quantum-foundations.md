@@ -3,6 +3,7 @@ title: "量子基础与应用"
 title_en: "Quantum Foundations & Applications"
 icon: "🔭"
 category_id: "quantum-foundations"
+image: "/assets/img/quantum-foundations.jpg"
 ---
 
 量子基础与应用研究旨在探索量子计算的基础理论问题，并推动量子技术在实际场景中的应用。
