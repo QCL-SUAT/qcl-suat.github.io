@@ -1,7 +1,8 @@
-- title: "超导量子比特"
-  title_en: "Superconducting Qubits"
+- title: "超导量子器件"
+  title_en: "Superconducting Quantum Devices"
   id: "superconducting-qubit"
   icon: "⚛️"
+  image: "/assets/img/research-bg.jpg"
   summary: "设计与优化高相干性超导量子比特，探索新型量子比特架构与制备工艺。"
   summary_en: "Design and optimization of high-coherence superconducting qubits, exploring novel qubit architectures and fabrication processes."
 
@@ -9,6 +10,7 @@
   title_en: "Quantum Control Schemes"
   id: "quantum-control"
   icon: "🔬"
+  image: "/assets/img/quantum-control.jpg"
   summary: "研究量子比特的高保真度调控方案，实现量子态的精确操控与优化。"
   summary_en: "Research on high-fidelity qubit control schemes for accurate quantum state manipulation and optimization."
 
@@ -16,6 +18,7 @@
   title_en: "Control Systems & Software"
   id: "control-systems-software"
   icon: "💻"
+  image: "/assets/img/control-systems.jpg"
   summary: "开发量子比特测控系统与软件工具链，包括 FPGA 实时控制、编译、仿真与实验管理平台。"
   summary_en: "Development of qubit control systems and software toolchains, including FPGA real-time control, compilation, simulation, and experiment management."
 
@@ -23,5 +26,6 @@
   title_en: "Quantum Foundations & Applications"
   id: "quantum-foundations"
   icon: "🔭"
+  image: "/assets/img/quantum-foundations.jpg"
   summary: "探索量子计算的基础理论问题与实际应用场景，推动量子技术从实验室走向应用。"
   summary_en: "Exploring fundamental questions and practical applications of quantum computing, bridging the gap from lab to real-world use."

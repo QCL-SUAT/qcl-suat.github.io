@@ -210,12 +210,15 @@ img { max-width: 100%; height: auto; }
 .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .research-card {
   background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 8px; padding: 24px; transition: border-color 0.2s;
+  border-radius: 8px; overflow: hidden; transition: border-color 0.2s;
   text-decoration: none; display: block;
 }
 .research-card:hover { border-color: var(--border-hover); }
-.research-card-icon { font-size: 28px; margin-bottom: 8px; }
-.research-card h4 { font-size: 18px; color: var(--accent); margin-bottom: 12px; }
+.research-card-img { width: 100%; height: 160px; overflow: hidden; }
+.research-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.research-card:hover .research-card-img img { transform: scale(1.05); }
+.research-card-body { padding: 20px 24px; }
+.research-card h4 { font-size: 18px; color: var(--accent); margin-bottom: 10px; }
 .research-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
 
 /* ===== Research Detail ===== */

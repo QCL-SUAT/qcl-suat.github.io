@@ -9,7 +9,7 @@ nav:
   lang_toggle_url: "/en/"
 
 research_sub:
-  superconducting-qubit: "超导量子比特"
+  superconducting-qubit: "超导量子器件"
   quantum-control: "量子调控方案"
   control-systems-software: "测控系统与软件"
   quantum-foundations: "量子基础与应用"

@@ -1,6 +1,6 @@
 ---
-title: "超导量子比特"
-title_en: "Superconducting Qubits"
+title: "超导量子器件"
+title_en: "Superconducting Quantum Devices"
 icon: "⚛️"
 category_id: "superconducting-qubit"
 image: "/assets/img/research-bg.jpg"
