@@ -6,6 +6,6 @@ vendor/
 node_modules/
 .superpowers/
 .DS_Store
-scripts/credentials.txt
+scripts/credentials.conf
 .staticrypt.json
 encrypted/

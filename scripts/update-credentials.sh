@@ -9,7 +9,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-CRED_FILE="$SCRIPT_DIR/credentials.txt"
+CRED_FILE="$SCRIPT_DIR/credentials.conf"
 REPO="QCL-SUAT/qcl-suat.github.io"
 
 if [ ! -f "$CRED_FILE" ]; then

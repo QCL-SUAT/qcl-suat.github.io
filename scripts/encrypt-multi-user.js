@@ -12,7 +12,7 @@ const os = require('os');
 
 const SCRIPT_DIR = __dirname;
 const PROJECT_DIR = path.dirname(SCRIPT_DIR);
-const CRED_FILE = process.env.CRED_FILE || path.join(SCRIPT_DIR, 'credentials.txt');
+const CRED_FILE = process.env.CRED_FILE || path.join(SCRIPT_DIR, 'credentials.conf');
 const TEMPLATE = path.join(SCRIPT_DIR, 'staticrypt-template.html');
 const INPUT = path.join(PROJECT_DIR, '_site', 'resources', 'index.html');
 
