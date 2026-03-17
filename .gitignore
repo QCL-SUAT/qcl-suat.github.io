@@ -7,3 +7,5 @@ node_modules/
 .superpowers/
 .DS_Store
 scripts/credentials.txt
+.staticrypt.json
+encrypted/
