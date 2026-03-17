@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-QCL（量子计算实验室）学术主页，Jekyll 静态站点，部署在 GitHub Pages。
+QCL（超导量子计算实验室）学术主页，Jekyll 静态站点，部署在 GitHub Pages。
 
 ## 关键规则
 

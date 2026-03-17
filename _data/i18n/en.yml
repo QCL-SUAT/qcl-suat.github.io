@@ -23,7 +23,7 @@ team_sub:
 
 hero:
   title: "QCL"
-  subtitle: "Quantum Computing Laboratory"
+  subtitle: "Superconducting Quantum Computing Laboratory"
   subtitle_en: ""
   affiliation: "School of Computing and Microelectronics · AI Research Institute"
   desc: "Exploring frontiers in quantum computing<br>Focused on superconducting qubit design and control"
@@ -61,7 +61,7 @@ resources_page:
   note: "Lab members only"
 
 footer:
-  copyright: "© 2026 QCL — Quantum Computing Laboratory"
+  copyright: "© 2026 QCL — Superconducting Quantum Computing Laboratory"
   university: "Shenzhen University of Advanced Technology"
   cme: "School of Computing Microelectronics"
   ai: "Artificial Intelligence Research Institute"

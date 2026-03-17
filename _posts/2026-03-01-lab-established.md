@@ -4,10 +4,10 @@ title: "实验室正式成立"
 title_en: "QCL Officially Established"
 date: 2026-03-01
 tag: "实验室动态"
-excerpt_en: "Quantum Computing Laboratory (QCL) at SUAT has been officially established, focusing on superconducting quantum computing research."
+excerpt_en: "Superconducting Quantum Computing Laboratory (QCL) at SUAT has been officially established, focusing on superconducting quantum computing research."
 ---
 
-量子计算实验室（QCL）于 2026 年 3 月在深圳理工大学正式成立。实验室隶属于算力与微电子学院与 AI 研究院，聚焦超导量子计算的基础研究与关键技术开发。
+超导量子计算实验室（QCL）于 2026 年 3 月在深圳理工大学正式成立。实验室隶属于算力微电子学院与人工智能研究院（筹），聚焦超导量子计算的基础研究与关键技术开发。
 
 ## 研究方向
 
