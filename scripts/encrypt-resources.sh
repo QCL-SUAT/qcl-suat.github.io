@@ -8,7 +8,6 @@
 #
 # 密码管理：
 #   密码存储在 scripts/credentials.txt 第一行（已 gitignore）
-#   格式：直接写密码，如 Qcl@2026
 #   人员变动时修改密码并通知所有成员
 
 set -e
@@ -46,10 +45,14 @@ fi
 
 echo "正在加密组内资源页面..."
 
+# staticrypt 输出到临时目录，再替换原文件
+TMPDIR="$(mktemp -d)"
+
 npx staticrypt "$INPUT" \
   -p "$PASSWORD" \
   --short \
-  -o "$INPUT" \
+  -d "$TMPDIR" \
+  -c false \
   --template-title "组内资源 — QCL" \
   --template-instructions "请输入课题组密码以访问内部资源" \
   --template-placeholder "请输入密码" \
@@ -59,6 +62,11 @@ npx staticrypt "$INPUT" \
   --template-color-primary "#4adeaa" \
   --template-color-secondary "#080c10"
 
+# 替换原文件
+cp "$TMPDIR/index.html" "$INPUT"
+rm -rf "$TMPDIR"
+
 echo ""
 echo "加密完成！"
-echo "部署 _site/ 目录或 push 到 GitHub 即可生效。"
+echo "本地预览：python3 -m http.server 4000 --directory _site"
+echo "线上部署：push 到 GitHub 即可自动加密部署。"
