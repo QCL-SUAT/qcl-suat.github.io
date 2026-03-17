@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script>if(localStorage.getItem('qcl-theme')==='light')document.documentElement.setAttribute('data-theme','light');</script>
   {% seo %}
 </head>
 <body>
