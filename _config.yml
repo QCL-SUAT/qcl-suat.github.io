@@ -35,4 +35,5 @@ exclude:
   - vendor
   - docs
   - README.md
+  - CLAUDE.md
   - scripts
