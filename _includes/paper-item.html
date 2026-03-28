@@ -4,7 +4,7 @@
     {{ paper.authors }} · <span class="journal">{{ paper.journal }}</span> ({{ paper.year }})
   </div>
   <div class="paper-links">
-    {% if paper.doi %}<a href="https://doi.org/{{ paper.doi }}" target="_blank">DOI</a>{% endif %}
-    {% if paper.arxiv %}<a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank">arXiv</a>{% endif %}
+    {% if paper.doi %}<a href="https://doi.org/{{ paper.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+    {% if paper.arxiv %}<a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank" rel="noopener noreferrer">arXiv</a>{% endif %}
   </div>
 </div>

@@ -1,11 +1,3 @@
-// Theme toggle (runs immediately to prevent flash)
-(function() {
-  var saved = localStorage.getItem('qcl-theme');
-  if (saved === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-})();
-
 function toggleTheme() {
   var current = document.documentElement.getAttribute('data-theme');
   var next = current === 'light' ? 'dark' : 'light';
@@ -23,20 +15,29 @@ function updateThemeIcon(theme) {
   if (btn) btn.textContent = theme === 'light' ? '☀️' : '🌙';
 }
 
-// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
   // Set theme icon on load
   var saved = localStorage.getItem('qcl-theme') || 'dark';
   updateThemeIcon(saved);
 
+  // Mobile menu toggle
   var toggle = document.querySelector('.menu-toggle');
   var navLinks = document.querySelector('.nav-links');
 
   if (toggle && navLinks) {
     toggle.addEventListener('click', function() {
-      navLinks.classList.toggle('open');
+      var isOpen = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  // Close mobile menu with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // Mobile dropdown toggle (touch devices)
   var dropdownItems = document.querySelectorAll('.nav-item--has-dropdown');

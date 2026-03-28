@@ -37,3 +37,6 @@ exclude:
   - README.md
   - CLAUDE.md
   - scripts
+  - .github
+  - package.json
+  - package-lock.json

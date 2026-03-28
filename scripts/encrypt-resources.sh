@@ -7,7 +7,7 @@
 #   2. 运行加密：./scripts/encrypt-resources.sh
 #
 # 凭据管理：
-#   凭据存储在 scripts/credentials.txt（已 gitignore）
+#   凭据存储在 scripts/credentials.conf（已 gitignore）
 #   每行一个用户，格式：username:password
 #   username 建议使用学校邮箱
 #   人员变动时修改后重新部署

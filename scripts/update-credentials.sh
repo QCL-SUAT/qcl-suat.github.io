@@ -3,7 +3,7 @@
 # 更新组内资源凭据并自动触发部署
 #
 # 用法：
-#   1. 编辑 scripts/credentials.txt（每行 username:password）
+#   1. 编辑 scripts/credentials.conf（每行 username:password）
 #   2. 运行 ./scripts/update-credentials.sh
 
 set -e

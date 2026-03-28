@@ -3,22 +3,22 @@
 
 <nav class="nav">
   <a href="{{ lp }}/" class="nav-logo">QCL<span>{{ t.hero.subtitle }}</span></a>
-  <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <div class="nav-links">
     <div class="nav-item">
       <a href="{{ lp }}/"{% if page.url == "/" or page.url == "/en/" %} class="active"{% endif %}>{{ t.nav.home }}</a>
     </div>
     <div class="nav-item nav-item--has-dropdown">
-      <a href="{{ lp }}/research/"{% if page.url contains "research" %} class="active"{% endif %}>{{ t.nav.research }}</a>
-      <div class="nav-dropdown">
+      <a href="{{ lp }}/research/"{% if page.url contains "research" %} class="active"{% endif %} aria-haspopup="true" aria-expanded="false">{{ t.nav.research }}</a>
+      <div class="nav-dropdown" role="menu">
         {% for r in site.data.research %}
         <a href="{{ lp }}/research/{{ r.id }}/">{% if page.lang == "en" %}{{ r.title_en }}{% else %}{{ r.title }}{% endif %}</a>
         {% endfor %}
       </div>
     </div>
     <div class="nav-item nav-item--has-dropdown">
-      <a href="{{ lp }}/team/"{% if page.url contains "team" %} class="active"{% endif %}>{{ t.nav.team }}</a>
-      <div class="nav-dropdown">
+      <a href="{{ lp }}/team/"{% if page.url contains "team" %} class="active"{% endif %} aria-haspopup="true" aria-expanded="false">{{ t.nav.team }}</a>
+      <div class="nav-dropdown" role="menu">
         <a href="{{ lp }}/team/#faculty">{{ t.team_sub.faculty }}</a>
         <a href="{{ lp }}/team/#phd">{{ t.team_sub.phd }}</a>
         <a href="{{ lp }}/team/#master">{{ t.team_sub.master }}</a>

@@ -38,12 +38,12 @@ function readCredentials(filePath) {
 
 // 用 PBKDF2 + AES-256-CBC 为某用户加密主密钥
 function encryptForUser(masterKey, username, password) {
-    const salt = Buffer.from(username, 'utf8');
+    const salt = crypto.randomBytes(16);
     const key = crypto.pbkdf2Sync(password, salt, 100000, 32, 'sha256');
     const iv = crypto.randomBytes(16);
     const cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
     const encrypted = Buffer.concat([cipher.update(masterKey, 'utf8'), cipher.final()]);
-    return { iv: iv.toString('hex'), data: encrypted.toString('hex') };
+    return { iv: iv.toString('hex'), data: encrypted.toString('hex'), salt: salt.toString('hex') };
 }
 
 function sha256(str) {

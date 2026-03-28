@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "devDependencies": {
+    "staticrypt": "^3.3.3"
+  }
+}

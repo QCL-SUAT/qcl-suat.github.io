@@ -1,7 +1,7 @@
-<div class="team-card"{% if member.scholar_url and member.category == "faculty" %} onclick="window.open('{{ member.scholar_url }}', '_blank')" style="cursor:pointer"{% endif %}>
+<{% if member.scholar_url and member.category == "faculty" %}a href="{{ member.scholar_url }}" target="_blank" rel="noopener noreferrer"{% else %}div{% endif %} class="team-card">
   <div class="team-avatar">
     {% if member.photo != "" %}
-    <img src="{{ member.photo | relative_url }}" alt="{{ member.name }}">
+    <img src="{{ member.photo | relative_url }}" alt="{{ member.name }}" loading="lazy">
     {% else %}
     👤
     {% endif %}
@@ -15,4 +15,4 @@
   {% if member.year %}
   <div class="team-year">{{ member.year }}</div>
   {% endif %}
-</div>
+</{% if member.scholar_url and member.category == "faculty" %}a{% else %}div{% endif %}>
