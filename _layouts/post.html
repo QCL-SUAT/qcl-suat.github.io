@@ -8,14 +8,14 @@ layout: default
   <a href="{{ lp }}/news/" class="back-link">{{ t.section.back_to_news }}</a>
   <article>
     <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
+      <h1 class="post-title">{% if page.lang == "en" and page.title_en %}{{ page.title_en }}{% else %}{{ page.title }}{% endif %}</h1>
       <div class="post-meta">
         {{ page.date | date: "%Y-%m-%d" }}
-        {% if page.tag %} · <span class="post-tag">{{ page.tag }}</span>{% endif %}
+        {% if page.tag %} · <span class="post-tag">{% if page.lang == "en" and page.tag_en %}{{ page.tag_en }}{% else %}{{ page.tag }}{% endif %}</span>{% endif %}
       </div>
     </header>
     <div class="post-content">
-      {{ content }}
+      {% if page.lang == "en" and page.body_en %}{{ page.body_en | markdownify }}{% else %}{{ content }}{% endif %}
     </div>
   </article>
 </div>
