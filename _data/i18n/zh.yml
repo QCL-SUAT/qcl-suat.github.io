@@ -25,7 +25,7 @@ hero:
   title: "QCL"
   subtitle: "超导量子计算实验室"
   subtitle_en: "Superconducting Quantum Computing Laboratory"
-  affiliation: "算力与微电子学院 · AI 研究院"
+  affiliation: "算力与微电子学院"
   desc: "探索量子计算前沿技术<br>聚焦超导量子比特设计与测控"
 
 section:

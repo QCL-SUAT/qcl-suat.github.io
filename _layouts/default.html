@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/favicon-192x192.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <script>if(localStorage.getItem('qcl-theme')==='light')document.documentElement.setAttribute('data-theme','light');</script>
   {% seo %}

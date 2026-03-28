@@ -25,7 +25,7 @@ hero:
   title: "QCL"
   subtitle: "Superconducting Quantum Computing Laboratory"
   subtitle_en: ""
-  affiliation: "School of Computing and Microelectronics · AI Research Institute"
+  affiliation: "School of Computing and Microelectronics"
   desc: "Exploring frontiers in quantum computing<br>Focused on superconducting qubit design and control"
 
 section:
