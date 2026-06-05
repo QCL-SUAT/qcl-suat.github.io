@@ -12,8 +12,9 @@
   {% seo %}
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   {% include nav.html %}
-  <main>{{ content }}</main>
+  <main id="main-content">{{ content }}</main>
   {% include footer.html %}
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>

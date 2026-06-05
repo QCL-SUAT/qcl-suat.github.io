@@ -2,6 +2,7 @@ title: "QCL — 超导量子计算实验室"
 description: "Superconducting Quantum Computing Laboratory"
 url: "https://qcl-suat.github.io"
 baseurl: ""
+timezone: Asia/Shanghai
 markdown: kramdown
 
 collections:

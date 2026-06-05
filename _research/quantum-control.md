@@ -3,7 +3,7 @@ title: "量子调控方案"
 title_en: "Quantum Control Schemes"
 icon: "🔬"
 category_id: "quantum-control"
-image: "/assets/img/quantum-control.jpg"
+image: "/assets/img/quantum-control"
 ---
 
 高保真度的量子调控方案是实现可靠量子计算的核心。QCL 研究量子比特的精确调控方法，探索优化量子门操作和量子态制备的新方案。

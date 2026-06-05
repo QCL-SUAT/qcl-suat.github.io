@@ -13,7 +13,10 @@ layout: default
   </div>
 
   {% if page.image %}
-  <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="research-img" loading="lazy">
+  <picture>
+    <source srcset="{{ page.image | append: '.webp' | relative_url }}" type="image/webp">
+    <img src="{{ page.image | append: '.jpg' | relative_url }}" alt="{{ page.title }}" class="research-img" loading="lazy">
+  </picture>
   {% endif %}
 
   <div class="research-desc">

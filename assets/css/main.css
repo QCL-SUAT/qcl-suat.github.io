@@ -61,7 +61,7 @@
 
 /* Theme transition */
 body, .nav, .news-item, .research-card, .team-card, .paper-item,
-.join-contact, .login-box, .alumni-item, .form-input {
+.join-contact, .alumni-item {
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
@@ -76,6 +76,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+.skip-link {
+  position: absolute; top: -100%; left: 0;
+  background: var(--accent); color: #080c10;
+  padding: 8px 16px; z-index: 1000; font-size: 14px;
+}
+.skip-link:focus { top: 0; }
 a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--accent-hover); }
 img { max-width: 100%; height: auto; }
@@ -316,6 +322,7 @@ img { max-width: 100%; height: auto; }
 }
 .join-contact h3 { font-size: 20px; color: var(--text-heading); margin-bottom: 16px; }
 .join-contact p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+.join-highlight { font-size: 15px; color: var(--accent); margin-bottom: 20px; font-weight: 600; }
 
 /* ===== Footer ===== */
 .footer {
@@ -378,5 +385,4 @@ img { max-width: 100%; height: auto; }
   .page-title { font-size: 28px; }
   .section-title { font-size: 22px; }
 
-  .login-box { width: 90%; padding: 32px 24px; }
-}
+  .login-box { width: 90%; padding: 32px 24px; }}

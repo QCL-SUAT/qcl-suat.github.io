@@ -3,7 +3,7 @@ title: "超导量子器件"
 title_en: "Superconducting Quantum Devices"
 icon: "⚛️"
 category_id: "superconducting-qubit"
-image: "/assets/img/research-bg.jpg"
+image: "/assets/img/research-bg"
 ---
 
 超导量子比特是目前最有前景的量子计算实现方案之一。QCL 致力于设计和优化高相干性超导量子比特，探索新型量子比特架构与制备工艺。

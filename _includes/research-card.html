@@ -3,7 +3,10 @@
 <a href="{{ lp }}/research/{{ item.id }}/" class="research-card">
   {% if item.image %}
   <div class="research-card-img">
-    <img src="{{ item.image | relative_url }}" alt="{% if page.lang == 'en' %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}" loading="lazy">
+    <picture>
+      <source srcset="{{ item.image | append: '.webp' | relative_url }}" type="image/webp">
+      <img src="{{ item.image | append: '.jpg' | relative_url }}" alt="{% if page.lang == 'en' %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}" loading="lazy">
+    </picture>
   </div>
   {% endif %}
   <div class="research-card-body">

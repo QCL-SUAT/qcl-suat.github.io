@@ -3,7 +3,7 @@ title: "测控系统与软件"
 title_en: "Control Systems & Software"
 icon: "💻"
 category_id: "control-systems-software"
-image: "/assets/img/control-systems.jpg"
+image: "/assets/img/control-systems"
 ---
 
 测控系统与软件工具链是连接量子算法与量子硬件的桥梁。QCL 开发先进的量子比特测控系统和配套软件平台。
