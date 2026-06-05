@@ -25,7 +25,7 @@ hero:
   title: "QCL"
   subtitle: "Superconducting Quantum Computing Laboratory"
   subtitle_en: ""
-  affiliation: "School of Computing and Microelectronics"
+  affiliation: "Research Center for Quantum Technology · School of Computing and Microelectronics"
   desc: "Exploring frontiers in quantum computing<br>Focused on superconducting qubit design and control"
 
 section:
@@ -40,6 +40,7 @@ section:
 join_page:
   title: "Join Us"
   subtitle: "We welcome students interested in quantum computing"
+  postdoc: "Postdoctoral Researcher / Research Assistant Professor"
   undergrad: "Undergraduate Interns"
   master: "Master's Students"
   phd: "PhD Students"
@@ -63,4 +64,5 @@ resources_page:
 footer:
   copyright: "© 2026 QCL — Superconducting Quantum Computing Laboratory"
   university: "Shenzhen University of Advanced Technology"
+  center: "Research Center for Quantum Technology"
   cme: "School of Computing and Microelectronics"

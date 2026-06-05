@@ -10,8 +10,6 @@ image: "/assets/img/research-bg.jpg"
 
 我们的研究重点包括：
 
-- **Transmon 量子比特优化**：通过改进制备工艺和材料选择，提升量子比特的相干时间和门操作保真度
-- **Fluxonium 量子比特**：研究新型 fluxonium 架构，利用其大非简并性实现更高保真度的量子门
-- **量子比特制备工艺**：探索约瑟夫森结的制备方法和基底材料处理技术
-
-The superconducting qubit is one of the most promising approaches to quantum computing. QCL is dedicated to designing and optimizing high-coherence superconducting qubits, exploring novel architectures and fabrication processes.
+- **Transmon 量子比特优化**：通过改进设计与多种耦合器提升门操作保真度，实现远距离的门操作
+- **新型量子器件**：探索人工巨原子、波导电动力学等新型超导量子器件架构，拓展量子信息处理的实现方式
+- **量子比特制备工艺**：通过改进制备工艺和材料选择提升量子比特的相干时间，探索约瑟夫森结的制备方法和基底材料处理技术

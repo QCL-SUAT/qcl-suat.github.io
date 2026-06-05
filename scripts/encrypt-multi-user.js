@@ -79,8 +79,9 @@ const masterKey = crypto.randomBytes(32).toString('base64url');
 // 用 StaticCrypt 以主密钥加密页面
 const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'qcl-encrypt-'));
 
-const result = spawnSync('npx', [
-    'staticrypt', INPUT,
+const staticryptBin = path.join(PROJECT_DIR, 'node_modules', '.bin', 'staticrypt');
+const result = spawnSync(staticryptBin, [
+    INPUT,
     '-p', masterKey,
     '--short',
     '-d', tmpDir,

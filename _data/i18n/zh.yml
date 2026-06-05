@@ -25,7 +25,7 @@ hero:
   title: "QCL"
   subtitle: "超导量子计算实验室"
   subtitle_en: "Superconducting Quantum Computing Laboratory"
-  affiliation: "算力与微电子学院"
+  affiliation: "量子技术研究中心 · 算力微电子学院"
   desc: "探索量子计算前沿技术<br>聚焦超导量子比特设计与测控"
 
 section:
@@ -40,6 +40,7 @@ section:
 join_page:
   title: "加入我们"
   subtitle: "欢迎对量子计算感兴趣的同学加入 QCL"
+  postdoc: "博士后 / 科研助理教授"
   undergrad: "本科实习生"
   master: "硕士研究生"
   phd: "博士研究生"
@@ -63,4 +64,5 @@ resources_page:
 footer:
   copyright: "© 2026 QCL — 超导量子计算实验室"
   university: "深圳理工大学"
+  center: "量子技术研究中心"
   cme: "算力微电子学院"

@@ -72,6 +72,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 34px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -167,6 +168,7 @@ img { max-width: 100%; height: auto; }
 }
 .hero-subtitle { font-size: 30px; color: #d0e8dc; margin-top: 16px; letter-spacing: 8px; font-weight: 300; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
 .hero-subtitle-en { font-size: 18px; color: #a0c0b0; margin-top: 8px; letter-spacing: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+.hero-affiliation { font-size: 14px; color: #90b0a0; margin-top: 10px; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
 .hero-divider {
   width: 100px; height: 2px; margin: 28px auto;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
@@ -209,7 +211,7 @@ img { max-width: 100%; height: auto; }
 .news-readmore { display: inline-block; margin-top: 14px; font-size: 14px; color: var(--accent); }
 
 /* ===== Research Cards ===== */
-.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .research-card {
   background: var(--card-bg); border: 1px solid var(--border);
   border-radius: 8px; overflow: hidden; transition: border-color 0.2s;
@@ -322,7 +324,9 @@ img { max-width: 100%; height: auto; }
 }
 .footer-text { font-size: 14px; color: var(--text-dim); }
 .footer-links { display: inline-block; margin-top: 10px; }
-.footer-links a { color: var(--accent); margin: 0 8px; font-size: 13px; }
+.footer-links a { color: var(--accent); margin: 0 4px; font-size: 13px; }
+.footer-links span { color: var(--text-dim); font-size: 13px; }
+.footer-sep { color: var(--text-dim); margin: 0 2px; }
 
 /* ===== Post Detail ===== */
 .post-header { margin-bottom: 32px; }
@@ -365,6 +369,7 @@ img { max-width: 100%; height: auto; }
   .hero-title { font-size: 56px; letter-spacing: 8px; }
   .hero-subtitle { font-size: 20px; letter-spacing: 4px; }
   .hero-subtitle-en { font-size: 14px; }
+  .hero-affiliation { font-size: 12px; }
   .hero-desc { font-size: 15px; }
 
   .container { padding: 32px 20px; }

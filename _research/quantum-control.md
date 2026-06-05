@@ -10,8 +10,6 @@ image: "/assets/img/quantum-control.jpg"
 
 我们的研究重点包括：
 
-- **高保真度量子门**：优化单比特和双比特门的脉冲波形设计，提升门操作保真度
+- **高保真度量子门**：优化单比特和双比特门的门架构设计与脉冲波形，提升门操作保真度
 - **量子态制备与测量**：研究高效的量子态初始化和高保真度读取方案
-- **噪声抑制技术**：探索动力学解耦等噪声抑制方法，延长量子相干时间
-
-Research on high-fidelity qubit control schemes, including gate pulse optimization, state preparation, and noise suppression techniques.
+- **噪声抑制与误差缓解**：探索动力学解耦等噪声抑制方法以及与控制方案耦合的误差缓解技术，提高电路保真度

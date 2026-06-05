@@ -14,6 +14,7 @@ defaults:
       path: ""
     values:
       lang: "zh"
+      image: "/assets/favicon-512x512.png"
   - scope:
       path: "en"
     values:

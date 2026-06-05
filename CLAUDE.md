@@ -37,54 +37,100 @@ Dependencies install to `vendor/bundle/` (project-local via bundler config).
 | Chinese | English |
 |---------|---------|
 | `index.html`, `research.html`, etc. | `en/index.html`, `en/research.html`, etc. |
-| `_research/*.md` | `en/research/*.html` |
+| `_research/*.md` | `en/research/*.html` (standalone, not collection items) |
 | `_data/i18n/zh.yml` | `_data/i18n/en.yml` |
 | `_data/*.yml` fields (`title`, `summary`, etc.) | Same files, `_en` suffixed fields (`title_en`, `summary_en`) |
+| `_posts/*.md` body + `body_en` front matter | Same file |
 
 ## Architecture
 
+### Tech Stack
+
+- Jekyll 4.3, no SASS/webpack — plain CSS + vanilla JS
+- Plugins: `jekyll-seo-tag`, `jekyll-sitemap` only
+- Node.js: `staticcrypt` ^3.3.3 (resource page encryption)
+- CI: Ruby 3.2, Node 20
+
+### Page Routing
+
+| URL (zh) | URL (en) | Source |
+|----------|----------|--------|
+| `/` | `/en/` | `index.html` / `en/index.html` |
+| `/research/` | `/en/research/` | `research.html` / `en/research.html` |
+| `/research/<slug>/` | `/en/research/<slug>/` | `_research/<slug>.md` / `en/research/<slug>.html` |
+| `/team/` | `/en/team/` | `team.html` / `en/team.html` |
+| `/news/` | `/en/news/` | `news.html` / `en/news.html` |
+| `/join/` | `/en/join/` | `join.html` / `en/join.html` |
+| `/resources/` | (Chinese only, encrypted) | `resources.html` |
+
+### Layouts (`_layouts/`)
+
+| Layout | Wraps | Used by |
+|--------|-------|---------|
+| `default` | root — HTML shell, head (anti-flash theme script, SEO), nav, footer, JS | all pages |
+| `page` | `default` + optional page_title/subtitle | currently unused |
+| `post` | `default` + title/date/tag/back-link/body_en fallback | `_posts/*.md` |
+| `research-detail` | `default` + icon/title/image/desc + auto-fetched related papers | `_research/*.md`, `en/research/*.html` |
+
 ### i18n System
 
-No plugin — hand-rolled with data files. Templates access translations via:
+Hand-rolled, no plugin. `page.lang` set via `_config.yml` defaults (`zh` for root, `en` for `en/`).
+
 ```liquid
 {% assign t = site.data.i18n[page.lang] %}
 {{ t.nav.home }}
 ```
 
-Language is set by Jekyll defaults in `_config.yml`: root pages get `lang: zh`, pages under `en/` get `lang: en`. English pages use `{% assign lp = "/en" %}` as a path prefix for internal links.
+English pages set `{% assign lp = "/en" %}` as URL prefix. Blog posts use `body_en` front matter field with Markdown fallback inside `post` layout.
 
 ### Theme System (Dark/Light)
 
-CSS custom properties in `assets/css/main.css`: dark theme in `:root`, light overrides in `[data-theme="light"]`. Theme state persisted in `localStorage('qcl-theme')`.
+- Dark (default) in `:root`, light overrides in `[data-theme="light"]` — all in `assets/css/main.css`
+- Anti-flash: inline `<script>` in `default.html` `<head>` reads `localStorage('qcl-theme')` synchronously
+- Toggle: `toggleTheme()` in `assets/js/main.js`
 
-Anti-flash: inline `<script>` in `_layouts/default.html` `<head>` reads localStorage and sets `data-theme` before first paint. Toggle function in `assets/js/main.js`.
+### Data Files (`_data/`)
 
-### Research Collection
+| File | Purpose |
+|------|---------|
+| `team.yml` | Members by category (faculty/phd/master/undergrad/alumni), bilingual fields |
+| `research.yml` | 4 research directions with id, titles, images, summaries |
+| `publications.yml` | Papers with `category` linking to research direction ids |
+| `i18n/zh.yml`, `i18n/en.yml` | All UI strings (nav, hero, section labels, footer, join page, resources login) |
 
-Data-driven: `_data/research.yml` defines 4 research areas (id, titles, images, summaries). Detail content lives in `_research/*.md` (Jekyll Collection with `research-detail` layout). Publications in `_data/publications.yml` link to research areas via `category` field matching `category_id` in research detail front matter.
+### Includes (`_includes/`)
+
+All respect `page.lang`. Context passed via Liquid `assign` or `include` variables:
+
+| Include | Variables | Used on |
+|---------|-----------|---------|
+| `nav.html` | `page.lang`, `page.url` | every page |
+| `hero.html` | `page.lang` | homepage only |
+| `footer.html` | `page.lang` | every page |
+| `research-card.html` | `page.lang`, `item` | research listing |
+| `team-card.html` | `page.lang`, `member` | team page |
+| `paper-item.html` | `paper` | research detail |
+| `news-card.html` | `page.lang`, `post` | news listing + homepage |
 
 ### Resource Page Encryption (Multi-User)
 
-`/resources/` is encrypted at build time. Architecture uses key wrapping:
-1. `scripts/encrypt-multi-user.js` generates a random master key
-2. StaticCrypt encrypts the page HTML with the master key
-3. For each user in `scripts/credentials.conf`, the master key is encrypted with their password (PBKDF2 + AES-256-CBC)
-4. Encrypted key map (`sha256(username) → {iv, ciphertext}`) is injected into the HTML
-5. Client-side: user enters credentials → derives key → unwraps master key → decrypts page
+`/resources/` encrypted at build time via key wrapping:
 
-`credentials.conf` is gitignored. GitHub Actions reads from the `RESOURCES_CREDENTIAL` secret (multi-line, one `username:password` per line).
+1. `scripts/encrypt-multi-user.js` generates random master key
+2. StaticCrypt encrypts page HTML with master key
+3. For each user in `scripts/credentials.conf`, master key is wrapped with their password (PBKDF2 + AES-256-CBC)
+4. Encrypted key map injected into HTML
+5. Client-side: username + password → SHA-256 lookup → PBKDF2 derive → unwrap master key → decrypt page
+
+`credentials.conf` is gitignored. CI reads from `RESOURCES_CREDENTIAL` secret.
 
 ### Deployment
 
-Push to `main` → GitHub Actions (`.github/workflows/deploy.yml`): Ruby setup → Jekyll build → Node.js StaticCrypt encryption → deploy to GitHub Pages.
+Push to `main` → GitHub Actions (`.github/workflows/deploy.yml`): Ruby 3.2 setup → `bundle exec jekyll build` → Node.js StaticCrypt encryption → GitHub Pages deploy.
 
-## Data Files
+## Known Asymmetries
 
-- `_data/team.yml` — team members grouped by category (faculty/phd/master/undergrad/alumni)
-- `_data/research.yml` — 4 research directions with bilingual titles, images, summaries
-- `_data/publications.yml` — papers with category linking to research areas
-- `_data/i18n/zh.yml` / `en.yml` — all UI strings
-
-## Includes
-
-Reusable components in `_includes/`: `nav.html` (responsive nav with dropdowns + lang/theme toggles), `hero.html`, `footer.html`, `research-card.html`, `team-card.html`, `paper-item.html`, `news-card.html`. Each receives context via Liquid `assign` or `include` variables and respects `page.lang`.
+- **Research detail pages**: Chinese versions are Jekyll collection items (`_research/*.md`), English versions are standalone HTML files (`en/research/*.html`). Adding a new research direction requires creating files in both systems.
+- **Resources page**: Chinese-only, no English counterpart.
+- **Blog posts**: Bilingual via `body_en` front matter in same file (not separate files).
+- **`hero.affiliation`**: Rendered in hero section, shows center + school affiliation chain.

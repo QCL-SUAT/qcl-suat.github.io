@@ -1,6 +1,6 @@
 {
   "private": true,
   "devDependencies": {
-    "staticrypt": "^3.3.3"
+    "staticrypt": "^3.5.4"
   }
 }
