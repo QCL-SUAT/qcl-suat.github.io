@@ -6,6 +6,8 @@
   photo: "/assets/img/team/pi.jpg"
   research: "量子控制与测控软件<br/>超导芯片设计与EDA软件"
   research_en: "Quantum Control & Measurement Software<br/>Superconducting Chip Design & EDA Software"
+  bio: "2008–2012 北京大学学士<br/>2012–2017 清华大学博士<br/>2018–2020 牛津大学博士后<br/>2020–2026 腾讯量子实验室"
+  bio_en: "2008–2012 B.S., Peking University<br/>2012–2017 Ph.D., Tsinghua University<br/>2018–2020 Postdoc, University of Oxford<br/>2020–2026 Tencent Quantum Lab"
   email: "anshuoming@suat-sz.edu.cn"
   scholar_url: "https://scholar.google.com/citations?user=XXXXXX"
 
@@ -17,6 +19,8 @@
   photo: "/assets/img/team/lidf.jpg"
   research: "超导芯片微纳加工<br/>新材料与工艺开发"
   research_en: "Superconducting chip micro-nano fabrication<br/>Novel materials & process development"
+  bio: "2011–2015 同济大学学士<br/>2015–2020 中国科学技术大学博士<br/>2020–2026 腾讯量子实验室"
+  bio_en: "2011–2015 B.S., Tongji University<br/>2015–2020 Ph.D., USTC<br/>2020–2026 Tencent Quantum Lab"
   email: "lidengfeng@suat-sz.edu.cn"
   scholar_url: "https://scholar.google.com/citations?hl=zh-CN&user=jMDnhBUAAAAJ"
 
