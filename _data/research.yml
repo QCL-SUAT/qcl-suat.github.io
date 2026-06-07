@@ -19,8 +19,8 @@
   id: "control-systems-software"
   icon: "💻"
   image: "/assets/img/control-systems"
-  summary: "开发量子比特测控系统与软件工具链，包括 FPGA 实时控制、编译、仿真与实验管理平台。"
-  summary_en: "Development of qubit control systems and software toolchains, including FPGA real-time control, compilation, simulation, and experiment management."
+  summary: "开发面向超导量子处理器的测控系统与软件工具链，涵盖 FPGA 实时控制、AI 辅助编译以及 HPC 协同的量子控制系统。"
+  summary_en: "Development of control systems and software toolchains for superconducting quantum processors, covering FPGA real-time control, AI-assisted compilation, and HPC-integrated quantum control."
 
 - title: "量子基础与应用"
   title_en: "Quantum Foundations & Applications"
