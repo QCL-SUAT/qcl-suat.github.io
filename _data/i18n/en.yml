@@ -25,7 +25,7 @@ hero:
   title: "QCL"
   subtitle: "Superconducting Quantum Computing Laboratory"
   subtitle_en: ""
-  affiliation: "Research Center for Quantum Technology · School of Computing and Microelectronics"
+  affiliation: "School of Computing and Microelectronics · Research Center for Quantum Technology"
   desc: "Exploring frontiers in quantum computing<br>Focused on superconducting qubit design and control"
 
 section:
