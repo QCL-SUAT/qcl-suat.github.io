@@ -334,7 +334,7 @@ img { max-width: 100%; height: auto; }
 .footer-links a { color: var(--accent); margin: 0 4px; font-size: 13px; }
 .footer-links span { color: var(--text-dim); font-size: 13px; }
 .footer-sep { color: var(--text-dim); margin: 0 2px; }
-.footer-views { margin-top: 10px; font-size: 12px; color: var(--text-dim); }
+.footer-views { margin-top: 10px; font-size: 13px; color: var(--text-dim); }
 
 /* ===== Post Detail ===== */
 .post-header { margin-bottom: 32px; }
