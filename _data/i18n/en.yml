@@ -18,7 +18,7 @@ team_sub:
   faculty: "Faculty"
   phd: "PhD Students"
   master: "Master Students"
-  undergrad: "Undergraduate Interns"
+  undergrad: "Undergraduates"
   alumni: "Alumni"
 
 hero:

@@ -7,7 +7,9 @@
     {% endif %}
   </div>
   <div class="team-name">{% if page.lang == "en" %}{{ member.name_en }}{% else %}{{ member.name }}{% endif %}</div>
+  {% if member.role %}
   <div class="team-role">{% if page.lang == "en" %}{{ member.role_en }}{% else %}{{ member.role }}{% endif %}</div>
+  {% endif %}
   <div class="team-research">{% if page.lang == "en" %}{{ member.research_en }}{% else %}{{ member.research }}{% endif %}</div>
   {% if member.bio %}
   <div class="team-bio">{% if page.lang == "en" %}{{ member.bio_en }}{% else %}{{ member.bio }}{% endif %}</div>
