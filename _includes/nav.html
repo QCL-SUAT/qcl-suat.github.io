@@ -35,7 +35,18 @@
     <div class="nav-item">
       <a href="/resources/">{{ t.nav.resources }}</a>
     </div>
-    <a href="{{ t.nav.lang_toggle_url }}" class="lang-toggle">{{ t.nav.lang_toggle }}</a>
+    {% comment %}语言切换：跳转当前页面的对应语言版本。中文加 /en 前缀，英文去掉 /en 前缀{% endcomment %}
+    {% if page.url contains "/resources" %}
+      {% assign toggle_url = t.nav.lang_toggle_url %}
+    {% elsif page.layout == "post" %}
+      {% if page.lang == "en" %}{% assign toggle_url = "/news/" %}{% else %}{% assign toggle_url = "/en/news/" %}{% endif %}
+    {% elsif page.lang == "en" %}
+      {% assign toggle_url = page.url | remove_first: "/en" %}
+      {% if toggle_url == "" %}{% assign toggle_url = "/" %}{% endif %}
+    {% else %}
+      {% assign toggle_url = page.url | prepend: "/en" %}
+    {% endif %}
+    <a href="{{ toggle_url }}" class="lang-toggle">{{ t.nav.lang_toggle }}</a>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
   </div>
 </nav>
