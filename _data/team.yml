@@ -48,6 +48,14 @@
   research_en: "Superconducting Quantum Devices"
   year: 2026
 
+- name: "钱睿妮"
+  name_en: "Ruini Qian"
+  category: "undergrad"
+  photo: "/assets/img/team/qianrn.jpg"
+  research: "芯片设计"
+  research_en: "Chip Design"
+  year: 2026
+
 - name: "毕业生 G"
   name_en: "Graduate G"
   category: "alumni"
