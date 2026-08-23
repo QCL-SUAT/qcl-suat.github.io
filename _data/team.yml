@@ -24,21 +24,13 @@
   email: "lidengfeng@suat-sz.edu.cn"
   scholar_url: "https://scholar.google.com/citations?hl=zh-CN&user=jMDnhBUAAAAJ"
 
-- name: "博士生 D"
-  name_en: "PhD Student D"
-  category: "phd"
-  photo: ""
-  research: "量子纠错"
-  research_en: "Quantum error correction"
-  year: 2024
-
-- name: "硕士生 E"
-  name_en: "Master Student E"
+- name: "沈吉源"
+  name_en: "Jiyuan Shen"
   category: "master"
-  photo: ""
-  research: "量子测控"
-  research_en: "Quantum control"
-  year: 2025
+  photo: "/assets/img/team/shenjy.jpg"
+  research: "量子软件工程"
+  research_en: "Quantum Software Engineering"
+  year: 2026
 
 - name: "尹文韬"
   name_en: "Wentao Yin"
@@ -55,11 +47,3 @@
   research: "芯片设计"
   research_en: "Chip Design"
   year: 2026
-
-- name: "毕业生 G"
-  name_en: "Graduate G"
-  category: "alumni"
-  role: "硕士 · 2025 届"
-  role_en: "M.S. · Class of 2025"
-  destination: "XX 公司 量子计算工程师"
-  destination_en: "Quantum Computing Engineer at XX Corp."
