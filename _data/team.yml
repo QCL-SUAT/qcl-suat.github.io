@@ -24,6 +24,14 @@
   email: "lidengfeng@suat-sz.edu.cn"
   scholar_url: "https://scholar.google.com/citations?hl=zh-CN&user=jMDnhBUAAAAJ"
 
+- name: "博士生 D"
+  name_en: "PhD Student D"
+  category: "phd"
+  photo: ""
+  research: "量子纠错"
+  research_en: "Quantum error correction"
+  year: 2024
+
 - name: "沈吉源"
   name_en: "Jiyuan Shen"
   category: "master"
