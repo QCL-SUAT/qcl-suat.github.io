@@ -32,6 +32,22 @@
   research_en: "Quantum Software Engineering"
   year: 2026
 
+- name: "龚紫健"
+  name_en: "Zijian Gong"
+  category: "master"
+  photo: "/assets/img/team/gongzj.jpg"
+  research: "量子软件工程"
+  research_en: "Quantum Software Engineering"
+  year: 2026
+
+- name: "刘梓沂"
+  name_en: "Ziyi Liu"
+  category: "master"
+  photo: "/assets/img/team/liuzy.jpg"
+  research: "微纳加工"
+  research_en: "Micro-Nano Fabrication"
+  year: 2026
+
 - name: "尹文韬"
   name_en: "Wentao Yin"
   category: "undergrad"
