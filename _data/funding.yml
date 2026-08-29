@@ -1,0 +1,12 @@
+# 资助基金 / Funding
+# 新增条目：复制一条 "- agency: ... 到 duration: ..."，中文字段 + _en 后缀英文字段
+- agency: "国家自然科学基金委员会"
+  agency_en: "National Natural Science Foundation of China"
+  type: "面上项目"
+  type_en: "General Program"
+  number: "12674609"
+  title: "基于暗态保护的无参量放大超导量子比特高保真读出"
+  title_en: "Dark-State-Protected High-Fidelity Readout of Superconducting Qubits without Parametric Amplification"
+  pi: "安硕明"
+  pi_en: "Shuoming An"
+  duration: "2027.01–2030.12"

@@ -32,6 +32,8 @@ section:
   latest_news: "最新动态"
   research: "研究方向"
   team: "团队成员"
+  funding: "资助基金"
+  pi_label: "负责人"
   read_more: "阅读全文 →"
   related_papers: "相关论文"
   back_to_news: "← 返回新闻列表"

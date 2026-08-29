@@ -32,6 +32,8 @@ section:
   latest_news: "Latest News"
   research: "Research"
   team: "Team"
+  funding: "Funding"
+  pi_label: "PI"
   read_more: "Read more →"
   related_papers: "Publications"
   back_to_news: "← Back to News"

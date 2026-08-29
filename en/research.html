@@ -14,4 +14,21 @@ permalink: /en/research/
     {% include research-card.html %}
     {% endfor %}
   </div>
+
+  <!-- Funding -->
+  <div class="section">
+    <h2 class="section-title">{{ t.section.funding }}</h2>
+    <div class="funding-list">
+      {% for grant in site.data.funding %}
+      <div class="funding-item">
+        <div class="funding-head">
+          <span class="funding-badge">{% if page.lang == "en" and grant.agency_en %}{{ grant.agency_en }}{% else %}{{ grant.agency }}{% endif %} · {% if page.lang == "en" and grant.type_en %}{{ grant.type_en }}{% else %}{{ grant.type }}{% endif %}</span>
+          <span class="funding-number">{{ grant.number }}</span>
+        </div>
+        <h3 class="funding-title">{% if page.lang == "en" and grant.title_en %}{{ grant.title_en }}{% else %}{{ grant.title }}{% endif %}</h3>
+        <p class="funding-meta">{{ t.section.pi_label }}：{% if page.lang == "en" and grant.pi_en %}{{ grant.pi_en }}{% else %}{{ grant.pi }}{% endif %}<span class="funding-sep">|</span>{{ grant.duration }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>

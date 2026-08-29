@@ -231,6 +231,26 @@ img { max-width: 100%; height: auto; }
 .research-card h4 { font-size: 18px; color: var(--accent); margin-bottom: 10px; }
 .research-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
 
+/* ===== Funding ===== */
+.funding-list { display: flex; flex-direction: column; gap: 16px; }
+.funding-item {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 24px 28px;
+}
+.funding-head {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px; margin-bottom: 14px;
+}
+.funding-badge {
+  display: inline-block; font-size: 13px; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px;
+  padding: 3px 12px;
+}
+.funding-number { font-size: 14px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.funding-title { font-size: 18px; font-weight: 600; color: var(--text-heading); margin-bottom: 10px; }
+.funding-meta { font-size: 14px; color: var(--text-secondary); }
+.funding-sep { margin: 0 12px; color: var(--border); }
+
 /* ===== Research Detail ===== */
 .research-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 .research-icon { font-size: 32px; }
