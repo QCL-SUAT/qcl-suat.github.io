@@ -35,11 +35,17 @@
     <div class="nav-item">
       <a href="/resources/">{{ t.nav.resources }}</a>
     </div>
-    {% comment %}语言切换：跳转当前页面的对应语言版本。中文加 /en 前缀，英文去掉 /en 前缀{% endcomment %}
+    {% comment %}语言切换：跳转当前页面的对应语言版本。中文加 /en 前缀，英文去掉 /en 前缀；帖子经 permalink_en/permalink_zh 互切；404 页无对应版，回首页{% endcomment %}
     {% if page.url contains "/resources" %}
       {% assign toggle_url = t.nav.lang_toggle_url %}
     {% elsif page.layout == "post" %}
-      {% if page.lang == "en" %}{% assign toggle_url = "/news/" %}{% else %}{% assign toggle_url = "/en/news/" %}{% endif %}
+      {% if page.lang == "en" %}
+        {% if page.permalink_zh %}{% assign toggle_url = page.permalink_zh %}{% else %}{% assign toggle_url = "/news/" %}{% endif %}
+      {% else %}
+        {% if page.permalink_en %}{% assign toggle_url = page.permalink_en %}{% else %}{% assign toggle_url = "/en/news/" %}{% endif %}
+      {% endif %}
+    {% elsif page.url contains "404" %}
+      {% assign toggle_url = "/" %}
     {% elsif page.lang == "en" %}
       {% assign toggle_url = page.url | remove_first: "/en" %}
       {% if toggle_url == "" %}{% assign toggle_url = "/" %}{% endif %}

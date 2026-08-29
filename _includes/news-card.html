@@ -1,12 +1,13 @@
 {% assign t = site.data.i18n[page.lang] %}
 {% if page.lang == "en" %}{% assign lp = "/en" %}{% else %}{% assign lp = "" %}{% endif %}
+{% if page.lang == "en" and post.permalink_en %}{% assign post_url = post.permalink_en %}{% else %}{% assign post_url = post.url %}{% endif %}
 
 <article class="news-item">
   <div class="news-meta">
     <span class="news-date">{{ post.date | date: "%Y-%m-%d" }}</span>
     {% if post.tag %}<span class="news-tag">{% if page.lang == "en" and post.tag_en %}{{ post.tag_en }}{% else %}{{ post.tag }}{% endif %}</span>{% endif %}
   </div>
-  <h3 class="news-title"><a href="{{ post.url | relative_url }}">{% if page.lang == "en" and post.title_en %}{{ post.title_en }}{% else %}{{ post.title }}{% endif %}</a></h3>
+  <h3 class="news-title"><a href="{{ post_url | relative_url }}">{% if page.lang == "en" and post.title_en %}{{ post.title_en }}{% else %}{{ post.title }}{% endif %}</a></h3>
   <p class="news-excerpt">{% if page.lang == "en" and post.excerpt_en %}{{ post.excerpt_en }}{% else %}{{ post.excerpt | strip_html | truncate: 120 }}{% endif %}</p>
-  <a href="{{ post.url | relative_url }}" class="news-readmore">{{ t.section.read_more }}</a>
+  <a href="{{ post_url | relative_url }}" class="news-readmore">{{ t.section.read_more }}</a>
 </article>

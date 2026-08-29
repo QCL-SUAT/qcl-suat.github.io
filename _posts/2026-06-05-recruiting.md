@@ -5,6 +5,7 @@ title_en: "QCL Recruiting: Postdocs, Graduate Students & Interns"
 date: 2026-06-05
 tag: "招生招聘"
 tag_en: "Recruiting"
+permalink_en: "/en/news/recruiting.html"
 excerpt_en: "QCL is recruiting postdoctoral researchers, PhD/master students, and undergraduate interns. The lab has abundant resources, fully supporting independent research."
 body_en: "
 QCL is recruiting at all levels! We welcome passionate researchers and students to join us.
