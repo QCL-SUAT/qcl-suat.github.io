@@ -217,7 +217,7 @@ img { max-width: 100%; height: auto; }
 .news-readmore { display: inline-block; margin-top: 14px; font-size: 14px; color: var(--accent); }
 
 /* ===== Research Cards ===== */
-.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
 .research-card {
   background: var(--card-bg); border: 1px solid var(--border);
   border-radius: 8px; overflow: hidden; transition: border-color 0.2s;

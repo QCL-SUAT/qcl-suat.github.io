@@ -30,6 +30,31 @@ python3 -m http.server 4000 --directory _site   # static preview
 
 Dependencies install to `vendor/bundle/` (project-local via bundler config).
 
+## Mandatory: Test Deployment Before Every Push
+
+**Never push to main without running the local deployment simulation first, and never consider a push done until the GitHub Actions run is green.** Background: 2026-08-29 a push deployed nothing — CI failed in the encrypt step (random-key bug) and the live site silently stayed a week out of date. Pre-push checks:
+
+```bash
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# 1. Jekyll build (must succeed)
+bundle exec jekyll build
+
+# 2. Encrypt step smoke test with dummy creds (CI's only non-build step)
+mkdir -p .tmp-enc && printf 'smoketest:dummypassword\n' > .tmp-enc/creds.conf
+CRED_FILE=.tmp-enc/creds.conf node scripts/encrypt-multi-user.js && rm -rf .tmp-enc
+
+# 3. Markdown-in-.html scan (Jekyll renders markdown only in .md files)
+grep -rn --include="*.html" -E '\*\*[^*]+\*\*|^#{1,4} |^[-*] \[' . --exclude-dir={_site,vendor,node_modules,.git} && echo "FOUND raw markdown in .html — fix before push"
+```
+
+Post-push (the real safety net — random failures like the encrypt-key bug only surface here):
+
+```bash
+gh run watch $(gh run list --limit 1 --json databaseId -q '.[0].databaseId') --exit-status
+# then spot-check the live URL actually serves the new content
+```
+
 ## Critical Rule: Chinese/English Sync
 
 **Every content change to a Chinese page MUST include the corresponding English update.** File pairs:
