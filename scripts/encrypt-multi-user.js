@@ -80,9 +80,10 @@ const masterKey = crypto.randomBytes(32).toString('base64url');
 const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'qcl-encrypt-'));
 
 const staticryptBin = path.join(PROJECT_DIR, 'node_modules', '.bin', 'staticrypt');
+// 主密钥经 STATICRYPT_PASSWORD 环境变量传入而非 -p argv：
+// base64url 密钥有 1/64 概率以 "-" 开头，会被 yarg 当成选项簇误解析（CI 2026-08-29 部署失败根因）
 const result = spawnSync(staticryptBin, [
     INPUT,
-    '-p', masterKey,
     '--short',
     '-d', tmpDir,
     '-c', 'false',
@@ -95,7 +96,11 @@ const result = spawnSync(staticryptBin, [
     '--template-remember', '记住登录状态',
     '--template-color-primary', '#4adeaa',
     '--template-color-secondary', '#080c10'
-], { stdio: 'inherit', cwd: PROJECT_DIR });
+], {
+    stdio: 'inherit',
+    cwd: PROJECT_DIR,
+    env: Object.assign({}, process.env, { STATICRYPT_PASSWORD: masterKey })
+});
 
 if (result.status !== 0) {
     console.error('StaticCrypt 加密失败');

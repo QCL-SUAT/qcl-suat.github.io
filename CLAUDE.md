@@ -48,7 +48,7 @@ Dependencies install to `vendor/bundle/` (project-local via bundler config).
 
 - Jekyll 4.3, no SASS/webpack — plain CSS + vanilla JS
 - Plugins: `jekyll-seo-tag`, `jekyll-sitemap` only
-- Node.js: `staticcrypt` ^3.3.3 (resource page encryption)
+- Node.js: `staticrypt` ^3.5.4 (resource page encryption; master key passed via `STATICRYPT_PASSWORD` env, not argv — see scripts/encrypt-multi-user.js)
 - CI: Ruby 3.2, Node 20
 
 ### Page Routing
