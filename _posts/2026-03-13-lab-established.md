@@ -8,7 +8,7 @@ tag_en: "Lab News"
 permalink_en: "/en/news/lab-established.html"
 excerpt_en: "Superconducting Quantum Computing Laboratory (QCL) at SUAT has been officially established, focusing on superconducting quantum computing research."
 body_en: "
-The Superconducting Quantum Computing Laboratory (QCL) was officially established on March 13, 2026 at the Shenzhen University of Advanced Technology. The lab is affiliated with the Quantum Technology Research Center, School of Computing and Microelectronics, focusing on fundamental research and key technology development in superconducting quantum computing.
+The Superconducting Quantum Computing Laboratory (QCL) was officially established on March 13, 2026 at the Shenzhen University of Advanced Technology. The lab is affiliated with the Quantum Technology Research Center, Faculty of Computility Microelectronics, focusing on fundamental research and key technology development in superconducting quantum computing.
 
 ## Research Directions
 
