@@ -9,11 +9,11 @@ lang: "en"
 permalink: /en/research/quantum-foundations/
 ---
 
-Quantum foundations and applications research aims to explore fundamental questions in quantum computing and drive quantum technology toward real-world applications.
+Our work on quantum foundations and applications looks at fundamental questions in quantum computing, and at the path from the lab to real-world use.
 
 Our research focuses on:
 
-- **Quantum error correction**: Experimental implementations of quantum error correction codes, advancing fault-tolerant quantum computing
+- **Quantum error correction**: Experimental implementations of quantum error correction codes, building an experimental basis for fault-tolerant quantum computing
 - **Quantum algorithms**: Exploring variational algorithms and quantum simulation schemes for near-term quantum devices
 - **Quantum advantage verification**: Designing and conducting experiments to demonstrate quantum computational advantage
 - **Cross-disciplinary applications**: Exploring applications of quantum computing in chemical simulation, optimization, and beyond

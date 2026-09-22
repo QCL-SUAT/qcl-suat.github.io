@@ -26,7 +26,7 @@ hero:
   subtitle: "超导量子计算实验室"
   subtitle_en: "Superconducting Quantum Computing Laboratory"
   affiliation: "算力微电子学院 · 量子技术研究中心"
-  desc: "探索量子计算前沿技术<br>聚焦超导量子比特设计与测控"
+  desc: "从超导量子比特出发<br>探索量子计算的更多可能"
 
 section:
   latest_news: "最新动态"
@@ -54,14 +54,14 @@ join_page:
 
 resources_page:
   title: "组内资源"
-  subtitle: "请使用课题组账号登录"
+  subtitle: "请使用实验室账号登录"
   username: "用户名"
   username_placeholder: "请输入用户名"
   password: "密码"
   password_placeholder: "请输入密码"
   login: "登 录"
   error: "用户名或密码错误，请重试。"
-  note: "仅限课题组成员访问"
+  note: "仅限实验室成员访问"
 
 footer:
   copyright: "© 2026 QCL — 超导量子计算实验室"

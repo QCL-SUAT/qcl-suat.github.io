@@ -9,7 +9,7 @@ lang: "en"
 permalink: /en/research/control-systems-software/
 ---
 
-Control systems and software toolchains bridge the gap between quantum algorithms and quantum hardware. QCL develops advanced control systems and supporting software platforms for superconducting quantum processors, tightly integrated with high-performance computing (HPC) infrastructure.
+Control systems and software toolchains bridge the gap between quantum algorithms and quantum hardware. QCL develops control systems and supporting software platforms for superconducting quantum processors, tightly integrated with high-performance computing (HPC) infrastructure.
 
 Our research focuses on:
 

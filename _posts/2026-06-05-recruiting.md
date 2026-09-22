@@ -6,13 +6,13 @@ date: 2026-06-05
 tag: "招生招聘"
 tag_en: "Recruiting"
 permalink_en: "/en/news/recruiting.html"
-excerpt_en: "QCL is recruiting postdoctoral researchers, PhD/master students, and undergraduate interns. The lab has abundant resources, fully supporting independent research."
+excerpt_en: "QCL is recruiting postdoctoral researchers, PhD/master students, and undergraduate interns. The lab offers stable research conditions and ample room to pursue independent research."
 body_en: "
 QCL is recruiting at all levels! We welcome passionate researchers and students to join us.
 
 ## Open Positions
 
-- **Postdoctoral Researcher / Research Assistant Professor**: The lab has abundant resources, fully supporting independent research. We seek candidates with a PhD in Physics, EE, CS, or related fields.
+- **Postdoctoral Researcher / Research Assistant Professor**: The lab offers stable research conditions and ample room to pursue independent research. We seek candidates with a PhD in Physics, EE, CS, or related fields.
 - **PhD Students**: Master's degree in related fields, with quantum mechanics or solid-state physics background.
 - **Master's Students**: Bachelor's degree in related fields, with programming skills (Python, Rust, C++).
 - **Undergraduate Interns**: Currently enrolled undergraduates with enthusiasm for quantum computing.
@@ -34,7 +34,7 @@ QCL 正在多个层级招聘，欢迎对量子计算有热情的研究者和学�
 
 ## 招聘岗位
 
-- **博士后 / 科研助理教授**：实验室资源充足，全力支持独立开展研究。要求具有物理学、电子工程、计算机科学或相关专业博士学位。
+- **博士后 / 科研助理教授**：实验室提供稳定的科研条件与充分的自主空间，支持独立开展研究。要求具有物理学、电子工程、计算机科学或相关专业博士学位。
 - **博士研究生**：具有相关硕士学位，有量子力学或固态物理基础。
 - **硕士研究生**：具有相关本科学位，具备编程能力（Python、Rust、C++）。
 - **本科实习生**：在读本科生，有学习热情和团队合作精神。

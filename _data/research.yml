@@ -27,5 +27,5 @@
   id: "quantum-foundations"
   icon: "🔭"
   image: "/assets/img/quantum-foundations"
-  summary: "探索量子计算的基础理论问题与实际应用场景，推动量子技术从实验室走向应用。"
-  summary_en: "Exploring fundamental questions and practical applications of quantum computing, bridging the gap from lab to real-world use."
+  summary: "关注量子计算的基础理论问题，探索它从实验室走向实际应用的路径。"
+  summary_en: "Looking at fundamental questions in quantum computing and the path from the lab to real-world use."

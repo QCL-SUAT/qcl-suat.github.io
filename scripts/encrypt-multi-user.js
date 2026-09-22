@@ -89,7 +89,7 @@ const result = spawnSync(staticryptBin, [
     '-c', 'false',
     '-t', TEMPLATE,
     '--template-title', '组内资源 — QCL',
-    '--template-instructions', '请输入课题组凭据以访问内部资源',
+    '--template-instructions', '请输入实验室凭据以访问内部资源',
     '--template-placeholder', '请输入密码',
     '--template-button', '登 录',
     '--template-error', '用户名或密码错误，请重试',

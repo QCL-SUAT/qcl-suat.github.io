@@ -25,7 +25,7 @@ permalink: /research/
           <span class="funding-number">{{ grant.number }}</span>
         </div>
         <h3 class="funding-title">{% if page.lang == "en" and grant.title_en %}{{ grant.title_en }}{% else %}{{ grant.title }}{% endif %}</h3>
-        <p class="funding-meta">{{ t.section.pi_label }}：{% if page.lang == "en" and grant.pi_en %}{{ grant.pi_en }}{% else %}{{ grant.pi }}{% endif %}<span class="funding-sep">|</span>{{ grant.duration }}</p>
+        <p class="funding-meta">{% if grant.pi %}{{ t.section.pi_label }}：{% if page.lang == "en" and grant.pi_en %}{{ grant.pi_en }}{% else %}{{ grant.pi }}{% endif %}<span class="funding-sep">|</span>{% endif %}{{ grant.duration }}</p>
       </div>
       {% endfor %}
     </div>

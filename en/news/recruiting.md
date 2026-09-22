@@ -10,7 +10,7 @@ QCL is recruiting at all levels! We welcome passionate researchers and students 
 
 ## Open Positions
 
-- **Postdoctoral Researcher / Research Assistant Professor**: The lab has abundant resources, fully supporting independent research. We seek candidates with a PhD in Physics, EE, CS, or related fields.
+- **Postdoctoral Researcher / Research Assistant Professor**: The lab offers stable research conditions and ample room to pursue independent research. We seek candidates with a PhD in Physics, EE, CS, or related fields.
 - **PhD Students**: Master's degree in related fields, with quantum mechanics or solid-state physics background.
 - **Master's Students**: Bachelor's degree in related fields, with programming skills (Python, Rust, C++).
 - **Undergraduate Interns**: Currently enrolled undergraduates with enthusiasm for quantum computing.
