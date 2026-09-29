@@ -8,14 +8,17 @@
   --accent: #4adeaa;
   --accent-hover: #3cc898;
   --text: #c8d0d8;
-  --text-secondary: #6a7a72;
+  /* 文字三级都要过 WCAG AA（正文 4.5:1）。改前实测：secondary #6a7a72 = 4.16:1、
+     dim #445(=#444455) = 2.06:1，都不达标；且 dim 提到达标后会亮过 secondary，
+     所以两级一起提，保住 dim < secondary 的层次。 */
+  --text-secondary: #7a8880;
   --text-title: #d0ddd5;
   --text-heading: #e0e8e4;
-  --text-dim: #445;
+  --text-dim: #757f8a;
   --nav-bg: rgba(8, 12, 16, 0.95);
   --nav-link: #889;
   --tag-bg: #0a1a14;
-  --tag-color: #4a6a5a;
+  --tag-color: #628a76;   /* 改前 #4a6a5a 对标签底色只有 2.99:1，现 4.63:1 */
   --tag-border: #1a3a2a;
   --code-bg: #1a2530;
   --input-bg: #0a0e14;
@@ -35,13 +38,13 @@
   --card-bg: #f7f8fa;
   --border: #e0e4e8;
   --border-hover: #b0c4b8;
-  --accent: #1a8a5a;
+  --accent: #178050;   /* 链接色对白底 4.95:1、对卡底 4.65:1（改前 #1a8a5a = 4.35:1） */
   --accent-hover: #14704a;
   --text: #3a4048;
-  --text-secondary: #6a7580;
+  --text-secondary: #646f7a;   /* 4.81:1 on card-bg（改前 #6a7580 = 4.41:1） */
   --text-title: #1a2030;
   --text-heading: #0a1520;
-  --text-dim: #99a0a8;
+  --text-dim: #66717c;         /* 4.67:1 on card-bg（改前 #99a0a8 = 2.48:1） */
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-link: #555d68;
   --tag-bg: #eef6f2;
@@ -78,7 +81,11 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* 弹性列布局让页脚在短页面上也贴底，不再于页脚下方留大片背景空白 */
+  min-height: 100vh;
+  display: flex; flex-direction: column;
 }
+main { flex: 1 0 auto; }
 .skip-link {
   position: absolute; top: -100%; left: 0;
   background: var(--accent); color: #080c10;
@@ -354,10 +361,17 @@ img { max-width: 100%; height: auto; }
   padding: 40px 56px; text-align: center; margin-top: 60px;
 }
 .footer-text { font-size: 14px; color: var(--text-dim); }
-.footer-links { display: inline-block; margin-top: 10px; }
-.footer-links a { color: var(--accent); margin: 0 4px; font-size: 13px; }
+/* 分隔符用 ::before 挂在「后一项」上，而不是独立 span——否则窄屏折行时
+   「·」会被单独留在行首或行尾（英文机构名长，390px 下必现）。 */
+.footer-links {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline;
+  gap: 4px 10px; margin-top: 10px;
+}
+.footer-links > * + *::before {
+  content: '·'; color: var(--text-dim); margin-right: 10px;
+}
+.footer-links a { color: var(--accent); font-size: 13px; }
 .footer-links span { color: var(--text-dim); font-size: 13px; }
-.footer-sep { color: var(--text-dim); margin: 0 2px; }
 
 /* ===== Post Detail ===== */
 .post-header { margin-bottom: 32px; }
@@ -398,17 +412,32 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 1150px) and (min-width: 769px) {
   .nav-logo span { display: none; }
 }
-@media (max-width: 768px) {
+/* 汉堡菜单：≤720px 启用（原为 768，导致 iPad 竖屏也只剩汉堡）。
+   721–768 保留完整导航，为此把菜单项进一步压到 12px / 窄内距，英文站也放得下。 */
+@media (max-width: 720px) {
   .nav { padding: 0 20px; height: 64px; }
   .nav-logo { font-size: 28px; }
   .nav-logo span { display: none; }
-  .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 16px 0; }
+  /* align-items: flex-start 让展开后的菜单左对齐；继承桌面态的 center 会整列居中 */
+  .nav-links { display: none; flex-direction: column; align-items: flex-start; position: absolute; top: 64px; left: 0; right: 0; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 16px 0; }
   .nav-links.open { display: flex; }
   .nav-item > a { padding: 12px 24px; }
   .nav-dropdown { position: static; border: none; box-shadow: none; padding-left: 24px; display: none; }
   .nav-item.open .nav-dropdown { display: block; }
   .menu-toggle { display: block; }
   .lang-toggle { margin: 8px 24px; display: inline-block; }
+}
+@media (min-width: 721px) and (max-width: 768px) {
+  .nav { padding: 0 14px; height: 64px; }
+  .nav-logo { font-size: 26px; letter-spacing: 2px; }
+  .nav-logo span { display: none; }
+  .nav-item > a { font-size: 12px; padding: 6px 5px; }
+  .lang-toggle { margin-left: 6px; padding: 3px 8px; font-size: 12px; }
+}
+
+@media (max-width: 768px) {
+  /* 页脚内边距随正文一起收窄；原来沿用桌面的 56px，窄屏下页脚比正文还窄 */
+  .footer { padding: 32px 20px; }
 
   .hero { height: 400px; }
   .hero-title { font-size: 56px; letter-spacing: 8px; }
@@ -424,3 +453,9 @@ img { max-width: 100%; height: auto; }
   .section-title { font-size: 22px; }
 
   .login-box { width: 90%; padding: 32px 24px; }}
+
+/* 平板竖屏（601–768）卡片排两列：上面那条把网格压成单列，
+   728px 宽的单列卡片配居中短文本会显得很空。放在其后以覆盖。 */
+@media (min-width: 601px) and (max-width: 768px) {
+  .research-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
