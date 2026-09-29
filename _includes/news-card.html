@@ -1,13 +1,15 @@
 {% assign t = site.data.i18n[page.lang] %}
 {% if page.lang == "en" %}{% assign lp = "/en" %}{% else %}{% assign lp = "" %}{% endif %}
 {% if page.lang == "en" and post.permalink_en %}{% assign post_url = post.permalink_en %}{% else %}{% assign post_url = post.url %}{% endif %}
+{% comment %}标题级别由调用方给：新闻列表页在 h1 下用默认 h2，首页在 h2 区块下用 level="h3"{% endcomment %}
+{% assign card_h = include.level | default: "h2" %}
 
 <article class="news-item">
   <div class="news-meta">
     <span class="news-date">{{ post.date | date: "%Y-%m-%d" }}</span>
     {% if post.tag %}<span class="news-tag">{% if page.lang == "en" and post.tag_en %}{{ post.tag_en }}{% else %}{{ post.tag }}{% endif %}</span>{% endif %}
   </div>
-  <h3 class="news-title"><a href="{{ post_url | relative_url }}">{% if page.lang == "en" and post.title_en %}{{ post.title_en }}{% else %}{{ post.title }}{% endif %}</a></h3>
+  <{{ card_h }} class="news-title"><a href="{{ post_url | relative_url }}">{% if page.lang == "en" and post.title_en %}{{ post.title_en }}{% else %}{{ post.title }}{% endif %}</a></{{ card_h }}>
   <p class="news-excerpt">{% if page.lang == "en" and post.excerpt_en %}{{ post.excerpt_en }}{% else %}{{ post.excerpt | strip_html | truncate: 120 }}{% endif %}</p>
   <a href="{{ post_url | relative_url }}" class="news-readmore">{{ t.section.read_more }}</a>
 </article>

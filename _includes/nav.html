@@ -16,6 +16,9 @@
         {% endfor %}
       </div>
     </div>
+    <div class="nav-item">
+      <a href="{{ lp }}/publications/"{% if page.url contains "publications" %} class="active"{% endif %}>{{ t.nav.publications }}</a>
+    </div>
     <div class="nav-item nav-item--has-dropdown">
       <a href="{{ lp }}/team/"{% if page.url contains "team" %} class="active"{% endif %} aria-haspopup="true" aria-expanded="false">{{ t.nav.team }}</a>
       <div class="nav-dropdown" role="menu">
@@ -23,7 +26,11 @@
         <a href="{{ lp }}/team/#phd">{{ t.team_sub.phd }}</a>
         <a href="{{ lp }}/team/#master">{{ t.team_sub.master }}</a>
         <a href="{{ lp }}/team/#undergrad">{{ t.team_sub.undergrad }}</a>
+        {% comment %}毕业成员区只在 team.yml 有 alumni 条目时才渲染，导航同步判空，避免锚点落空{% endcomment %}
+        {% assign nav_alumni = site.data.team | where: "category", "alumni" %}
+        {% if nav_alumni.size > 0 %}
         <a href="{{ lp }}/team/#alumni">{{ t.team_sub.alumni }}</a>
+        {% endif %}
       </div>
     </div>
     <div class="nav-item">

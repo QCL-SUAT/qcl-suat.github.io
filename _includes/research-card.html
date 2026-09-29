@@ -1,4 +1,6 @@
 {% if page.lang == "en" %}{% assign lp = "/en" %}{% else %}{% assign lp = "" %}{% endif %}
+{% comment %}标题级别由调用方给：研究方向列表页在 h1 下用 level="h2"，首页在 h2 区块下用 level="h3"{% endcomment %}
+{% assign card_h = include.level | default: "h3" %}
 
 <a href="{{ lp }}/research/{{ item.id }}/" class="research-card">
   {% if item.image %}
@@ -10,7 +12,7 @@
   </div>
   {% endif %}
   <div class="research-card-body">
-    <h4>{% if page.lang == "en" %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</h4>
+    <{{ card_h }}>{% if page.lang == "en" %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</{{ card_h }}>
     <p>{% if page.lang == "en" %}{{ item.summary_en }}{% else %}{{ item.summary }}{% endif %}</p>
   </div>
 </a>

@@ -1,7 +1,7 @@
 ---
 layout: research-detail
-title: "Quantum Foundations & Applications"
-title_en: "Quantum Foundations & Applications"
+title: "Quantum Foundations &amp; Applications"
+title_en: "Quantum Foundations &amp; Applications"
 icon: "🔭"
 category_id: "quantum-foundations"
 image: "/assets/img/quantum-foundations"

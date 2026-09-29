@@ -1,6 +1,7 @@
 nav:
   home: "首页"
   research: "研究方向"
+  publications: "发表论文"
   team: "团队成员"
   news: "新闻动态"
   join: "加入我们"
@@ -31,6 +32,7 @@ hero:
 section:
   latest_news: "最新动态"
   research: "研究方向"
+  publications: "发表论文"
   team: "团队成员"
   funding: "资助基金"
   pi_label: "负责人"

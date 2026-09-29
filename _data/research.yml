@@ -15,7 +15,7 @@
   summary_en: "Research on high-fidelity qubit control schemes for accurate quantum state manipulation and optimization."
 
 - title: "测控系统与软件"
-  title_en: "Control Systems & Software"
+  title_en: "Control Systems &amp; Software"
   id: "control-systems-software"
   icon: "💻"
   image: "/assets/img/control-systems"
@@ -23,7 +23,7 @@
   summary_en: "Development of control systems and software toolchains for superconducting quantum processors, covering FPGA real-time control, AI-assisted compilation, and HPC-integrated quantum control."
 
 - title: "量子基础与应用"
-  title_en: "Quantum Foundations & Applications"
+  title_en: "Quantum Foundations &amp; Applications"
   id: "quantum-foundations"
   icon: "🔭"
   image: "/assets/img/quantum-foundations"

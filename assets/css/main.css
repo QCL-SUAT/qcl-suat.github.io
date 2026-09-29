@@ -72,7 +72,10 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  font-size: 34px;
+  /* 基准字号只作兜底：站内几乎所有元素都显式写 px，实测无任何可见元素依赖它。
+     曾写成 34px——任何漏写 font-size 的元素都会继承这个巨值（2026-09-29 实测：
+     卡片标题漏了一条 CSS 规则，直接渲染成约 51px）。兜底必须是一个正常值。 */
+  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -228,7 +231,8 @@ img { max-width: 100%; height: auto; }
 .research-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
 .research-card:hover .research-card-img img { transform: scale(1.05); }
 .research-card-body { padding: 20px 24px; }
-.research-card h4 { font-size: 18px; color: var(--accent); margin-bottom: 10px; }
+/* 标题标签由 include 的 level 参数决定（h2 / h3），故三个级别都要覆盖，否则会掉回浏览器默认字号 */
+.research-card h2, .research-card h3, .research-card h4 { font-size: 18px; color: var(--accent); margin-bottom: 10px; }
 .research-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
 
 /* ===== Funding ===== */
@@ -380,6 +384,20 @@ img { max-width: 100%; height: auto; }
 .back-link { display: inline-block; font-size: 14px; color: var(--accent); margin-bottom: 24px; }
 
 /* ===== Responsive ===== */
+/* 中等宽度：收紧导航。英文站的全称副标题（45 字符 × 15px + 2px 字距）实测约 450px，
+   足以把菜单项挤到第二行，故三处同时收：导航内边距、Logo 尺寸与字距、菜单项字号内距。
+   副标题在 hero、页脚与站点标题里都有，再窄一档时隐藏它只影响导航条本身。
+   768px 及以下另走汉堡菜单分支（见下一段）。 */
+@media (max-width: 1600px) and (min-width: 769px) {
+  .nav { padding: 0 28px; }
+  .nav-logo { font-size: 30px; letter-spacing: 3px; }
+  /* 只有英文站的副标题长到需要收（45 字符）；中文站是 9 个汉字，收了反而变小 */
+  html[lang="en"] .nav-logo span { font-size: 12px; letter-spacing: 0.5px; }
+  .nav-item > a { font-size: 15px; padding: 8px 10px; }
+}
+@media (max-width: 1150px) and (min-width: 769px) {
+  .nav-logo span { display: none; }
+}
 @media (max-width: 768px) {
   .nav { padding: 0 20px; height: 64px; }
   .nav-logo { font-size: 28px; }

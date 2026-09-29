@@ -1,7 +1,7 @@
 <div class="paper-item">
   <div class="paper-title">{{ paper.title }}</div>
   <div class="paper-meta">
-    {{ paper.authors }} · <span class="journal">{{ paper.journal }}</span> ({{ paper.year }})
+    {{ paper.authors }} · <span class="journal">{% if page.lang == "en" and paper.journal_en %}{{ paper.journal_en }}{% else %}{{ paper.journal }}{% endif %}</span> ({{ paper.year }})
   </div>
   <div class="paper-links">
     {% if paper.doi %}<a href="https://doi.org/{{ paper.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}

@@ -1,7 +1,7 @@
 ---
 layout: research-detail
-title: "Control Systems & Software"
-title_en: "Control Systems & Software"
+title: "Control Systems &amp; Software"
+title_en: "Control Systems &amp; Software"
 icon: "💻"
 category_id: "control-systems-software"
 image: "/assets/img/control-systems"

@@ -1,0 +1,23 @@
+---
+layout: default
+title: "发表论文"
+permalink: /publications/
+---
+{% assign t = site.data.i18n[page.lang] %}
+
+<div class="container">
+  <h1 class="page-title">{{ t.section.publications }}</h1>
+
+  {% comment %}按年份倒序分组；同一年内按 _data/publications.yml 的书写顺序排列{% endcomment %}
+  {% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
+  {% for y in years %}
+  <div class="section">
+    <h2 class="papers-heading">{{ y }}</h2>
+    <div class="paper-list">
+      {% for paper in site.data.publications %}
+      {% if paper.year == y %}{% include paper-item.html %}{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

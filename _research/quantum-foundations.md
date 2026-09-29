@@ -1,6 +1,6 @@
 ---
 title: "量子基础与应用"
-title_en: "Quantum Foundations & Applications"
+title_en: "Quantum Foundations &amp; Applications"
 icon: "🔭"
 category_id: "quantum-foundations"
 image: "/assets/img/quantum-foundations"

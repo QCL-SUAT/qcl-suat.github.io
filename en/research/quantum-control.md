@@ -15,4 +15,4 @@ Our research focuses on:
 
 - **High-fidelity quantum gates**: Optimizing single-qubit and two-qubit gate architecture design and pulse waveforms to improve gate fidelity
 - **State preparation and measurement**: Developing efficient quantum state initialization and high-fidelity readout schemes
-- **Noise suppression & error mitigation**: Exploring dynamical decoupling, control-coupled error mitigation techniques to improve circuit fidelity
+- **Noise suppression &amp; error mitigation**: Exploring dynamical decoupling, control-coupled error mitigation techniques to improve circuit fidelity

@@ -1,1 +1,10 @@
-[]
+# 论文条目：category 取 _data/research.yml 里的 id，决定条目出现在哪个研究方向详情页的
+# 「相关论文 / Publications」区。预印本把刊物位置写成 journal: "arXiv 预印本" 与
+# journal_en: "arXiv preprint"，正式发表后改成期刊名并补 doi 字段。
+- title: "The wiring sets a phase-blind quantum memory's gap, the weight caps its coherence"
+  authors: "Ruini Qian, Zhaobin Lyu, Zelong Yin, Jingjing Hu, Dengfeng Li, Shuoming An"
+  journal: "arXiv 预印本"
+  journal_en: "arXiv preprint"
+  year: 2026
+  arxiv: "2609.32943"
+  category: "quantum-foundations"

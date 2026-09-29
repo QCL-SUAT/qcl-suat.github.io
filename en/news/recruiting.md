@@ -1,7 +1,7 @@
 ---
 layout: post
 lang: "en"
-title: "QCL Recruiting: Postdocs, Graduate Students & Interns"
+title: "QCL Recruiting: Postdocs, Graduate Students &amp; Interns"
 date: 2026-06-05
 tag: "Recruiting"
 permalink_zh: "/2026/06/05/recruiting.html"

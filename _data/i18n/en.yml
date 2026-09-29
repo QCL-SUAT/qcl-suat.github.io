@@ -1,6 +1,7 @@
 nav:
   home: "Home"
   research: "Research"
+  publications: "Publications"
   team: "Team"
   news: "News"
   join: "Join Us"
@@ -11,8 +12,8 @@ nav:
 research_sub:
   superconducting-qubit: "Superconducting Quantum Devices"
   quantum-control: "Quantum Control Schemes"
-  control-systems-software: "Control Systems & Software"
-  quantum-foundations: "Quantum Foundations & Applications"
+  control-systems-software: "Control Systems &amp; Software"
+  quantum-foundations: "Quantum Foundations &amp; Applications"
 
 team_sub:
   faculty: "Faculty"
@@ -31,6 +32,7 @@ hero:
 section:
   latest_news: "Latest News"
   research: "Research"
+  publications: "Publications"
   team: "Team"
   funding: "Funding"
   pi_label: "PI"

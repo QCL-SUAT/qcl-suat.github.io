@@ -5,6 +5,7 @@ _site/
 vendor/
 node_modules/
 .superpowers/
+.claude/
 .DS_Store
 scripts/credentials.conf
 .staticrypt.json

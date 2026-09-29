@@ -14,7 +14,7 @@ permalink: /en/
     <h2 class="section-title">{{ t.section.latest_news }}</h2>
     <div class="news-list">
       {% for post in site.posts limit:1 %}
-      {% include news-card.html %}
+      {% include news-card.html level="h3" %}
       {% endfor %}
     </div>
   </div>
@@ -24,7 +24,7 @@ permalink: /en/
     <h2 class="section-title">{{ t.section.research }}</h2>
     <div class="research-grid">
       {% for item in site.data.research %}
-      {% include research-card.html %}
+      {% include research-card.html level="h3" %}
       {% endfor %}
     </div>
   </div>

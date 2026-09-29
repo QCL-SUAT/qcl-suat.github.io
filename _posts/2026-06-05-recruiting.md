@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "QCL 招聘：博士后、研究生及实习生"
-title_en: "QCL Recruiting: Postdocs, Graduate Students & Interns"
+title_en: "QCL Recruiting: Postdocs, Graduate Students &amp; Interns"
 date: 2026-06-05
 tag: "招生招聘"
 tag_en: "Recruiting"
