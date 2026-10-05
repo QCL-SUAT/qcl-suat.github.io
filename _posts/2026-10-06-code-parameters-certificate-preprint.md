@@ -20,8 +20,6 @@ body_en: |
 
   The work belongs to the same line as the lab's [QECCertificates library](/en/news/qeccertificates-open-source.html), open-sourced on 1 October: the certificate checker the paper rests on is the one formalized there.
 
-  Authors: Shuoming An (faculty), Fusheng Yang (Sun Yat-sen University).
-
   Paper: [arXiv:2610.03214](https://arxiv.org/abs/2610.03214)
 ---
 
@@ -36,7 +34,5 @@ body_en: |
 除 Lean 逻辑的三条标准公理之外，论文不信任任何东西；它同时写明两条边界：生成器目前写到 20 个量子比特为止，144 比特码的下界是导入的、未在本文中证明。距离由此从被相信的对象，变成可复核的对象。
 
 这项工作与实验室 10 月 1 日开源的 [QECCertificates 库](/2026/10/01/qeccertificates-open-source.html)同属一条工作线：复核所凭的证书检查器，正是库里形式化的那一个。
-
-作者为安硕明（实验室教师）、Fusheng Yang（中山大学）。
 
 论文：[arXiv:2610.03214](https://arxiv.org/abs/2610.03214)

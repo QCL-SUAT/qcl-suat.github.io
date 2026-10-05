@@ -18,6 +18,4 @@ Nothing beyond the three standard axioms of Lean's logic is trusted, and the pap
 
 The work belongs to the same line as the lab's [QECCertificates library](/en/news/qeccertificates-open-source.html), open-sourced on 1 October: the certificate checker the paper rests on is the one formalized there.
 
-Authors: Shuoming An (faculty), Fusheng Yang (Sun Yat-sen University).
-
 Paper: [arXiv:2610.03214](https://arxiv.org/abs/2610.03214)
