@@ -6,25 +6,28 @@ date: 2026-09-29
 tag: "科研进展"
 tag_en: "Research"
 permalink_en: "/en/news/phase-blind-memory-preprint.html"
-excerpt_en: "The lab's new work is now on arXiv as a preprint (arXiv:2609.32943, submitted 26 September 2026)."
-body_en: "
-The lab's new work is now on arXiv as a preprint (arXiv:2609.32943, submitted 26 September 2026).
+excerpt_en: "The lab's new work is now on arXiv as a preprint (arXiv:2609.32943, submitted 26 September 2026, now updated to v2)."
+body_en: |
+  The lab's new work is now on arXiv as a preprint (arXiv:2609.32943, submitted 26 September 2026, now updated to v2).
 
-**The wiring sets a phase-blind quantum memory's gap, the weight caps its coherence**
+  **The wiring sets a phase-blind quantum memory's gap, the weight caps its coherence**
 
-The paper looks at a question that is not yet settled: what the gap of a dissipatively corrected memory actually measures. It shows that in the class where every jump resets one basis state, the wiring can set the gap time while the phase keeps its own rate — under dephasing the gap time spans two orders of magnitude across wirings, while the phase does not move.
+  The paper looks at a question that is not yet settled: what the gap of a dissipatively corrected memory actually measures. It shows that in the class where every jump resets one basis state, the wiring can set the gap time while the phase keeps its own rate — under dephasing the gap time spans two orders of magnitude across wirings, while the phase does not move.
 
-Authors: Ruini Qian (first author, undergraduate in the lab), Zhaobin Lyu, Zelong Yin, Jingjing Hu, Dengfeng Li (faculty), Shuoming An (faculty).
+  The title's second half is the other conclusion: in this class, a contrast laid across two or more qubits fades faster than a bare qubit at any distance, and no pump power substitutes; the ceiling on its coherence is two over the qubits the contrast spans. A two-branch pump can escape it at distance three, and a two-clock test runs on published data.
 
-Paper: [arXiv:2609.32943](https://arxiv.org/abs/2609.32943)
-"
+  Authors: Ruini Qian (first author, undergraduate in the lab), Zhaobin Lyu, Zelong Yin, Jingjing Hu, Dengfeng Li (faculty), Shuoming An (faculty).
+
+  Paper: [arXiv:2609.32943](https://arxiv.org/abs/2609.32943)
 ---
 
-实验室的新工作已在 arXiv 上线，目前为预印本（arXiv:2609.32943，2026 年 9 月 26 日提交）。
+实验室的新工作已在 arXiv 上线，目前为预印本（arXiv:2609.32943，2026 年 9 月 26 日提交，现已更新至 v2）。
 
 **The wiring sets a phase-blind quantum memory's gap, the weight caps its coherence**
 
 文章关心一个尚未定论的问题：耗散纠错量子存储器的能隙究竟度量了什么。结果显示，当每一次跳跃复位一个基态时，耗散通道的接法（wiring）可以设定能隙时间，而相位的衰减速率不受它影响——退相位下，不同接法的能隙时间相差可达两个数量级，相位则不动。
+
+标题的后半句是另一条结论：在这一类存储器里，铺在两个或更多量子比特上的对比度，在任何码距离下都比单个裸量子比特衰减得更快，泵功率再大也替代不了；相干的上限是 2 除以对比所铺开的量子比特数。一个双分支泵（two-branch pump）可以在距离三处越过这个上限；一个双时钟检验（two-clock test）用已发表的数据即可运行。
 
 作者为钱睿妮（第一作者，实验室本科生）、Zhaobin Lyu、Zelong Yin、Jingjing Hu、李登峰（实验室教师）、安硕明（实验室教师）。
 

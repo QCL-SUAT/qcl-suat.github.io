@@ -15,7 +15,7 @@
   year: 2026
   arxiv: "2610.04306"
   category: "quantum-foundations"
-- title: "Quantum code parameters, checkable by a certificate of provable size"
+- title: "Quantum error-correcting code parameters, checkable by a certificate of provable size"
   authors: "Shuoming An, Fusheng Yang"
   journal: "arXiv 预印本"
   journal_en: "arXiv preprint"
