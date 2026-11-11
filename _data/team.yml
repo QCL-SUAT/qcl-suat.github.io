@@ -61,6 +61,14 @@
   research_en: "Micro-Nano Fabrication"
   year: 2026
 
+- name: "唐鹏飞"
+  name_en: "Pengfei Tang"
+  category: "undergrad"
+  photo: "/assets/img/team/tangpf.jpg"
+  research: "量子器件"
+  research_en: "Quantum Devices"
+  year: 2026
+
 - name: "尹文韬"
   name_en: "Wentao Yin"
   category: "undergrad"
