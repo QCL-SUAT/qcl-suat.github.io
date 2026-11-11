@@ -29,6 +29,15 @@
   research_en: "Superconducting chip process development<br/>Layout design &amp; flip-chip packaging"
   email: "hujingjing@suat-sz.edu.cn"
 
+- name: "欧阳鹏辉"
+  name_en: "Penghui Ouyang"
+  category: "faculty"
+  role: "科研助理教授"
+  role_en: "Research Assistant Professor"
+  photo: "/assets/img/team/ouyangph.jpg"
+  research: "量子芯片加工与表征<br/>微纳加工设备运维"
+  research_en: "Quantum chip fabrication &amp; characterization<br/>Micro-nano fabrication equipment operation &amp; maintenance"
+
 - name: "博士生 D"
   name_en: "PhD Student D"
   category: "phd"
@@ -73,8 +82,8 @@
   name_en: "Wentao Yin"
   category: "undergrad"
   photo: "/assets/img/team/yinwt.jpg"
-  research: "超导量子器件"
-  research_en: "Superconducting Quantum Devices"
+  research: "量子应用"
+  research_en: "Quantum Applications"
   year: 2026
 
 - name: "钱睿妮"
