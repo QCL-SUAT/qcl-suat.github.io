@@ -38,6 +38,13 @@
   research: "量子芯片加工与表征<br/>微纳加工设备运维"
   research_en: "Quantum chip fabrication &amp; characterization<br/>Micro-nano fabrication equipment operation &amp; maintenance"
 
+- name: "吕昭斌"
+  name_en: "Zhaobin Lyu"
+  category: "postdoc_ra"
+  photo: "/assets/img/team/lvzb.jpg"
+  research: "芯片设计与微纳加工"
+  research_en: "Chip Design &amp; Micro-Nano Fabrication"
+
 - name: "博士生 D"
   name_en: "PhD Student D"
   category: "phd"

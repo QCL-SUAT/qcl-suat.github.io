@@ -17,6 +17,7 @@ research_sub:
 
 team_sub:
   faculty: "Faculty"
+  postdoc_ra: "Postdocs &amp; Research Assistants"
   phd: "PhD Students"
   master: "Master Students"
   undergrad: "Undergraduates"

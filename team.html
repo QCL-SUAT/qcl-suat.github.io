@@ -21,6 +21,19 @@ permalink: /team/
   </div>
   {% endif %}
 
+  <!-- Postdocs & Research Assistants -->
+  {% assign postdoc_ra = site.data.team | where: "category", "postdoc_ra" %}
+  {% if postdoc_ra.size > 0 %}
+  <div class="team-section" id="postdoc-ra">
+    <h2 class="team-section-title">{{ t.team_sub.postdoc_ra }}</h2>
+    <div class="team-grid">
+      {% for member in postdoc_ra %}
+      {% include team-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
   <!-- PhD Students -->
   {% assign phd = site.data.team | where: "category", "phd" %}
   {% if phd.size > 0 %}
