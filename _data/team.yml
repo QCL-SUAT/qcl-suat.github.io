@@ -47,6 +47,15 @@
   research: "芯片设计与微纳加工"
   research_en: "Chip Design &amp; Micro-Nano Fabrication"
 
+- name: "吴桂基"
+  name_en: "Guiji Wu"
+  category: "postdoc_ra"
+  role: "研究助理"
+  role_en: "Research Assistant"
+  photo: "/assets/img/team/wugj.jpg"
+  research: "行政管理"
+  research_en: "Administration"
+
 - name: "博士生 D"
   name_en: "PhD Student D"
   category: "phd"
