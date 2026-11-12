@@ -171,7 +171,12 @@ img { max-width: 100%; height: auto; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('../img/hero-bg.jpg') center/cover no-repeat;
+  background: center/cover no-repeat;
+  background-image: url('../img/hero-bg.jpg'); /* fallback for browsers without image-set */
+  background-image: image-set(
+    url('../img/hero-bg.webp') 1x type('image/webp'),
+    url('../img/hero-bg.jpg') 1x type('image/jpeg')
+  );
 }
 .hero-bg::after {
   content: ''; position: absolute; inset: 0;

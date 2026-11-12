@@ -1,5 +1,5 @@
 # 论文条目：category 取 _data/research.yml 里的 id，决定条目出现在哪个研究方向详情页的
-# 「相关论文 / Publications」区。预印本把刊物位置写成 journal: "arXiv 预印本" 与
+# "相关论文 / Publications" 区。预印本把刊物位置写成 journal: "arXiv 预印本" 与
 # journal_en: "arXiv preprint"，正式发表后改成期刊名并补 doi 字段。
 - title: "Correlations decide a shallow-circuit advantage"
   authors: "Zijian Gong, Zhaobin Lyu, Jingjing Hu, Dengfeng Li, Shuoming An"

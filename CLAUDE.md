@@ -44,9 +44,12 @@ bundle exec jekyll build
 mkdir -p .tmp-enc && printf 'smoketest:dummypassword\n' > .tmp-enc/creds.conf
 CRED_FILE=.tmp-enc/creds.conf node scripts/encrypt-multi-user.js && rm -rf .tmp-enc
 
-# 3. Markdown-in-.html scan (Jekyll renders markdown only in .md files)
-grep -rn --include="*.html" -E '\*\*[^*]+\*\*|^#{1,4} |^[-*] \[' . --exclude-dir={_site,vendor,node_modules,.git} && echo "FOUND raw markdown in .html — fix before push"
+# 3. Site gate: dead links, i18n parity, page symmetry, news mirrors,
+#    data field parity, media existence/usage, markdown-in-html, punctuation
+python3 scripts/check-site.py
 ```
+
+(The gate subsumes the old ad-hoc markdown-in-.html grep.)
 
 Post-push (the real safety net — random failures like the encrypt-key bug only surface here):
 
@@ -62,7 +65,7 @@ gh run watch $(gh run list --limit 1 --json databaseId -q '.[0].databaseId') --e
 | Chinese | English |
 |---------|---------|
 | `index.html`, `research.html`, etc. | `en/index.html`, `en/research.html`, etc. |
-| `_research/*.md` | `en/research/*.html` (standalone, not collection items) |
+| `_research/*.md` | `en/research/*.md` (standalone, not collection items) |
 | `_data/i18n/zh.yml` | `_data/i18n/en.yml` |
 | `_data/*.yml` fields (`title`, `summary`, etc.) | Same files, `_en` suffixed fields (`title_en`, `summary_en`) |
 | `_posts/*.md` body + `body_en` front matter | Same file |
@@ -82,7 +85,7 @@ gh run watch $(gh run list --limit 1 --json databaseId -q '.[0].databaseId') --e
 |----------|----------|--------|
 | `/` | `/en/` | `index.html` / `en/index.html` |
 | `/research/` | `/en/research/` | `research.html` / `en/research.html` |
-| `/research/<slug>/` | `/en/research/<slug>/` | `_research/<slug>.md` / `en/research/<slug>.html` |
+| `/research/<slug>/` | `/en/research/<slug>/` | `_research/<slug>.md` / `en/research/<slug>.md` |
 | `/team/` | `/en/team/` | `team.html` / `en/team.html` |
 | `/news/` | `/en/news/` | `news.html` / `en/news.html` |
 | `/join/` | `/en/join/` | `join.html` / `en/join.html` |
@@ -95,7 +98,7 @@ gh run watch $(gh run list --limit 1 --json databaseId -q '.[0].databaseId') --e
 | `default` | root — HTML shell, head (anti-flash theme script, SEO), nav, footer, JS | all pages |
 | `page` | `default` + optional page_title/subtitle | currently unused |
 | `post` | `default` + title/date/tag/back-link/body_en fallback | `_posts/*.md` |
-| `research-detail` | `default` + icon/title/image/desc + auto-fetched related papers | `_research/*.md`, `en/research/*.html` |
+| `research-detail` | `default` + icon/title/image/desc + auto-fetched related papers | `_research/*.md`, `en/research/*.md` |
 
 ### i18n System
 
@@ -155,7 +158,7 @@ Push to `main` → GitHub Actions (`.github/workflows/deploy.yml`): Ruby 3.2 set
 
 ## Known Asymmetries
 
-- **Research detail pages**: Chinese versions are Jekyll collection items (`_research/*.md`), English versions are standalone HTML files (`en/research/*.html`). Adding a new research direction requires creating files in both systems.
+- **Research detail pages**: Chinese versions are Jekyll collection items (`_research/*.md`), English versions are standalone Markdown files (`en/research/*.md`, not collection items). Adding a new research direction requires creating files in both systems.
 - **Resources page**: Chinese-only, no English counterpart.
 - **Blog posts**: Bilingual via `body_en` front matter in same file (not separate files).
 - **`hero.affiliation`**: Rendered in hero section, shows center + school affiliation chain.
