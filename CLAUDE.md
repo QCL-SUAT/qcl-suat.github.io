@@ -70,6 +70,8 @@ gh run watch $(gh run list --limit 1 --json databaseId -q '.[0].databaseId') --e
 | `_data/*.yml` fields (`title`, `summary`, etc.) | Same files, `_en` suffixed fields (`title_en`, `summary_en`) |
 | `_posts/*.md` body + `body_en` front matter | Same file |
 
+**Funding news ↔ funding list sync (2026-11-13, PI mandate)**: a grant approval news post and its `_data/funding.yml` entry are a pair — adding one requires adding/updating the other **in the same change**, always in both languages (news post + `en/news/` mirror; funding entry with zh fields + `_en` fields). Grant facts (agency, type, number, title, duration) must match verbatim between the news post and the yml entry. Current pairs: NSFC General Program 12674609 ↔ `_posts/2026-08-29-nsfc-general-program.md`; Guangdong Characteristic Innovation 2026KTSCX106 ↔ `_posts/2026-11-07-guangdong-characteristic-innovation-project.md`.
+
 ## Architecture
 
 ### Tech Stack
