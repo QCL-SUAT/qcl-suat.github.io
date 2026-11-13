@@ -1,6 +1,15 @@
 # 资助基金 / Funding
 # 新增条目：复制一条 "- agency: ... 到 duration: ..."，中文字段 + _en 后缀英文字段
 # 条目不写 pi / pi_en（实验室口径，不突出个人）；确需显示时补上这两个字段即会自动显示
+- agency: "广东省教育厅"
+  agency_en: "Department of Education of Guangdong Province"
+  type: "特色创新类项目"
+  type_en: "Characteristic Innovation Project"
+  number: "2026KTSCX106"
+  title: "面向高保真超导量子门的几何相位控制方法与实验验证"
+  title_en: "Geometric Phase Control Methods for High-Fidelity Superconducting Quantum Gates and Experimental Verification"
+  duration: "2026 年度立项"
+  duration_en: "Approved in 2026"
 - agency: "国家自然科学基金委员会"
   agency_en: "National Natural Science Foundation of China"
   type: "面上项目"
