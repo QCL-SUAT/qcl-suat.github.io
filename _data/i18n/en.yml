@@ -27,7 +27,7 @@ hero:
   title: "QCL"
   subtitle: "Superconducting Quantum Computing Laboratory"
   subtitle_en: ""
-  affiliation: "Faculty of Computility Microelectronics · Research Center for Quantum Technology"
+  affiliation: "Faculty of Computility Microelectronics · Quantum Technology Research Center"
   desc: "Starting from superconducting qubits<br>Exploring the possibilities of quantum computing"
 
 section:
@@ -69,7 +69,7 @@ resources_page:
 footer:
   copyright: "© 2026 QCL — Superconducting Quantum Computing Laboratory"
   university: "Shenzhen University of Advanced Technology"
-  center: "Research Center for Quantum Technology"
+  center: "Quantum Technology Research Center"
   cme: "Faculty of Computility Microelectronics"
   page_views: "Page Views"
   site_views: "Site Views"
