@@ -94,7 +94,7 @@ const result = spawnSync(staticryptBin, [
     '--template-button', '登 录',
     '--template-error', '用户名或密码错误，请重试',
     '--template-remember', '记住登录状态',
-    '--template-color-primary', '#7db5ff',
+    '--template-color-primary', '#f5cf74',
     '--template-color-secondary', '#0a1024'
 ], {
     stdio: 'inherit',

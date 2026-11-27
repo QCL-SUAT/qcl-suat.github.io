@@ -1,6 +1,7 @@
 /* ===== QCL Deep Indigo & Gold Theme (default) ===== */
-/* 黄蓝改版（2026-11-27）：蓝（结构与链接）＋琥珀金（成果时刻），呼应 hero 背景图
-   里冰蓝实验室与金铜色稀释制冷机自身的配色。全部文字/背景组合 WCAG AA 实测过，
+/* 黄蓝改版（2026-11-27，终版）：暗色下文字全金（四级亮度递减），蓝只留结构层
+   （背景靛蓝、卡片、边框、hero 辉光）；浅色下「暖墨＋金」。呼应 hero 背景图里
+   冰蓝实验室与金铜色稀释制冷机自身的配色。全部文字/背景组合 WCAG AA 实测过，
    数字见各行注释。 */
 
 :root {
@@ -10,23 +11,24 @@
   --card-bg: #111b3a;
   --border: #24345e;
   --border-hover: #4d6cc2;
-  --accent: #7db5ff;       /* 对 bg 8.92:1、对卡底 7.99:1 */
-  --accent-hover: #a8cbff; /* 暗色主题 hover 提亮而非压暗，观感更亮堂 */
-  --accent-2: #ffcf5c;     /* 琥珀金：只落在日期/标签/徽章/分隔线等成果时刻；对卡底 11.54:1 */
+  --accent: #f5cf74;       /* 链接金：对卡底 11.32:1 */
+  --accent-hover: #fde8a8; /* 暗色主题 hover 提亮而非压暗，观感更亮堂 */
+  --accent-2: #ecb845;     /* 点缀金：日期/标签/徽章/分隔线；对卡底 9.27:1 */
+  --heading: #f5cf74;      /* 标题金：各级标题专用；对卡底 11.32:1 */
   --on-accent: #0a1024;
   --on-accent-2: #241a05;
-  --text: #cdd7ee;
-  /* 文字三级都要过 WCAG AA（正文 4.5:1）。2026-11-27 改版实测：
-     text/卡底 11.72、secondary/卡底 6.45、dim/卡底 5.01，dim < secondary 层次保住。 */
-  --text-secondary: #8fa0c6;
-  --text-title: #dde6fa;
-  --text-heading: #e9effd;
-  --text-dim: #7e8bb2;
+  --text: #eee0b8;
+  /* 全金文字（2026-11-27 二次提亮）：三级金亮度递减，全部过 WCAG AA。实测：
+     text/卡底 12.88、secondary/卡底 9.49、dim/卡底 7.31，dim < secondary 层次保住。 */
+  --text-secondary: #d6c08c;
+  --text-title: #f5cf74;
+  --text-heading: #f5cf74;
+  --text-dim: #bfa876;
   --nav-bg: rgba(10, 16, 36, 0.92);
-  --nav-link: #98a6cf;     /* 对 bg 7.81:1 */
-  --tag-bg: #2b2312;
-  --tag-color: #ecd07a;    /* 对 tag-bg 10.26:1 */
-  --tag-border: #55431a;
+  --nav-link: #d6c08c;     /* 对卡底 9.49:1 */
+  --tag-bg: #2a2010;
+  --tag-color: #ecc879;    /* 对 tag-bg 9.98:1 */
+  --tag-border: #5c4514;
   --code-bg: #182450;
   --input-bg: #0b1230;
   --avatar-bg: #182450;
@@ -40,28 +42,30 @@
   --hero-overlay-bottom: rgba(9, 13, 36, 0.80);
 }
 
-/* ===== Classic Academic White Theme（蓝金浅色版） ===== */
+/* ===== Academic White Theme（暖墨＋金浅色版） ===== */
 [data-theme="light"] {
   --bg: #ffffff;
   --bg-image: none;
   --card-bg: #f5f7fd;
   --border: #dfe5f3;
   --border-hover: #a3b8ea;
-  --accent: #1c5bd1;      /* 链接色对白底 6.06:1、对卡底 5.66:1 */
-  --accent-hover: #16479f;
-  --accent-2: #8a5f00;    /* 对白底 5.65:1、对卡底 5.27:1 */
+  --accent: #8f6400;      /* 链接金：对白底 5.26:1、对卡底 4.91:1 */
+  --accent-hover: #6f4e00;
+  --accent-2: #8f6400;    /* 点缀金：对白底 5.26:1、对卡底 4.91:1 */
+  --heading: #8f6400;     /* 标题金：对白底 5.26:1、对卡底 4.91:1 */
   --on-accent: #ffffff;
   --on-accent-2: #ffffff;
-  --text: #363e55;
-  --text-secondary: #5b6780;   /* 5.30:1 on card-bg */
-  --text-title: #141b33;
-  --text-heading: #0d1329;
-  --text-dim: #5d6880;         /* 5.22:1 on card-bg */
+  /* 白底套「暖墨＋金」：纯金正文在白底发脏，正文走暖墨近黑，金留给标题与链接 */
+  --text: #332a1c;             /* 暖墨 13.17:1 on card-bg */
+  --text-secondary: #6d5f49;   /* 暖灰金 5.79:1 on card-bg */
+  --text-title: #8f6400;
+  --text-heading: #8f6400;
+  --text-dim: #7c6e57;         /* 4.64:1 on card-bg */
   --nav-bg: rgba(255, 255, 255, 0.95);
-  --nav-link: #4a5573;
-  --tag-bg: #fbf1d2;
-  --tag-color: #7a5800;        /* 5.77:1 on tag-bg */
-  --tag-border: #e9d9a6;
+  --nav-link: #6d5f49;
+  --tag-bg: #f8eed6;
+  --tag-color: #7a5800;        /* 5.64:1 on tag-bg */
+  --tag-border: #e6d3a0;
   --code-bg: #eef1fa;
   --input-bg: #f5f7fc;
   --avatar-bg: #e8edf9;
@@ -125,11 +129,11 @@ img { max-width: 100%; height: auto; }
 }
 .nav-logo {
   font-size: 36px; font-weight: 800;
-  color: var(--accent); letter-spacing: 5px; text-decoration: none;
+  color: var(--heading); letter-spacing: 5px; text-decoration: none;
 }
-.nav-logo:hover { color: var(--accent); }
+.nav-logo:hover { color: var(--heading); }
 .nav-logo span {
-  font-size: 15px; color: var(--text-secondary); font-weight: 400;
+  font-size: 15px; color: var(--accent-2); font-weight: 400;
   letter-spacing: 2px; margin-left: 14px;
 }
 .nav-links { display: flex; gap: 8px; align-items: center; }
@@ -157,7 +161,7 @@ img { max-width: 100%; height: auto; }
   display: block; padding: 10px 20px;
   color: var(--nav-link); font-size: 14px;
 }
-.nav-dropdown a:hover { color: var(--accent); background: rgba(125,181,255,0.10); }
+.nav-dropdown a:hover { color: var(--accent); background: rgba(245,207,116,0.10); }
 
 /* Language toggle */
 .lang-toggle {
@@ -200,23 +204,24 @@ img { max-width: 100%; height: auto; }
 }
 .hero-content { position: relative; z-index: 2; text-align: center; }
 .hero-title {
-  font-size: 100px; font-weight: 800; color: #fff;
-  letter-spacing: 16px; text-shadow: 0 0 80px rgba(125,181,255,0.32);
+  font-size: 100px; font-weight: 800; color: #f5cf74; /* 两套主题都用亮金——落在照片上，不吃主题变量 */
+  letter-spacing: 16px;
+  text-shadow: 0 2px 24px rgba(6,10,28,0.5), 0 0 80px rgba(125,181,255,0.32);
 }
-.hero-subtitle { font-size: 30px; color: #d8e4ff; margin-top: 16px; letter-spacing: 8px; font-weight: 300; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
-.hero-subtitle-en { font-size: 18px; color: #aec6f0; margin-top: 8px; letter-spacing: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-.hero-affiliation { font-size: 14px; color: #96b0e4; margin-top: 10px; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+.hero-subtitle { font-size: 30px; color: #f0d488; margin-top: 16px; letter-spacing: 8px; font-weight: 300; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+.hero-subtitle-en { font-size: 18px; color: #e2c57e; margin-top: 8px; letter-spacing: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+.hero-affiliation { font-size: 14px; color: #d4b874; margin-top: 10px; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
 .hero-divider {
   width: 120px; height: 2px; margin: 28px auto;
   background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
 }
-.hero-desc { font-size: 18px; color: #cbd9f5; max-width: 520px; margin: 0 auto; line-height: 1.8; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+.hero-desc { font-size: 18px; color: #e3c78d; max-width: 520px; margin: 0 auto; line-height: 1.8; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
 
 /* ===== Container & Sections ===== */
 .container { max-width: 1000px; margin: 0 auto; padding: 48px 40px; }
 .section { margin-bottom: 56px; }
 .section-title {
-  font-size: 28px; font-weight: 700; color: var(--text-heading);
+  font-size: 28px; font-weight: 700; color: var(--heading);
   margin-bottom: 32px; padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
@@ -225,7 +230,7 @@ img { max-width: 100%; height: auto; }
   background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
   margin-right: 14px; vertical-align: middle; border-radius: 2px;
 }
-.page-title { font-size: 36px; font-weight: 700; color: var(--text-heading); margin-bottom: 12px; }
+.page-title { font-size: 36px; font-weight: 700; color: var(--heading); margin-bottom: 12px; }
 .page-subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 48px; }
 
 /* ===== News Cards ===== */
@@ -245,9 +250,9 @@ img { max-width: 100%; height: auto; }
   font-size: 11px; color: var(--tag-color); background: var(--tag-bg);
   padding: 3px 10px; border-radius: 10px; border: 1px solid var(--tag-border);
 }
-.news-title { font-size: 22px; font-weight: 600; color: var(--text-title); margin-bottom: 12px; line-height: 1.4; }
+.news-title { font-size: 22px; font-weight: 600; color: var(--heading); margin-bottom: 12px; line-height: 1.4; }
 .news-title a { color: inherit; text-decoration: none; }
-.news-title a:hover { color: var(--accent); }
+.news-title a:hover { color: var(--accent-2); }
 .news-excerpt { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
 .news-readmore { display: inline-block; margin-top: 14px; font-size: 14px; color: var(--accent); }
 
@@ -268,7 +273,7 @@ img { max-width: 100%; height: auto; }
 .research-card:hover .research-card-img img { transform: scale(1.05); }
 .research-card-body { padding: 20px 24px; }
 /* 标题标签由 include 的 level 参数决定（h2 / h3），故三个级别都要覆盖，否则会掉回浏览器默认字号 */
-.research-card h2, .research-card h3, .research-card h4 { font-size: 18px; color: var(--accent); margin-bottom: 10px; }
+.research-card h2, .research-card h3, .research-card h4 { font-size: 18px; color: var(--heading); margin-bottom: 10px; }
 .research-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
 
 /* ===== Funding ===== */
@@ -287,14 +292,14 @@ img { max-width: 100%; height: auto; }
   padding: 3px 12px;
 }
 .funding-number { font-size: 14px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-.funding-title { font-size: 18px; font-weight: 600; color: var(--text-heading); margin-bottom: 10px; }
+.funding-title { font-size: 18px; font-weight: 600; color: var(--heading); margin-bottom: 10px; }
 .funding-meta { font-size: 14px; color: var(--text-secondary); }
-.funding-sep { margin: 0 12px; color: var(--border); }
+.funding-sep { margin: 0 12px; color: var(--text-dim); }
 
 /* ===== Research Detail ===== */
 .research-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 .research-icon { font-size: 32px; }
-.research-detail-title { font-size: 30px; font-weight: 700; color: var(--accent); }
+.research-detail-title { font-size: 30px; font-weight: 700; color: var(--heading); }
 .research-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; max-width: 800px; }
 .research-img {
   width: 100%; max-height: 300px; object-fit: cover;
@@ -328,7 +333,7 @@ img { max-width: 100%; height: auto; }
 /* ===== Team ===== */
 .team-section { margin-bottom: 48px; }
 .team-section-title {
-  font-size: 22px; font-weight: 600; color: var(--text-heading);
+  font-size: 22px; font-weight: 600; color: var(--heading);
   margin-bottom: 20px; padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
 }
@@ -350,7 +355,7 @@ img { max-width: 100%; height: auto; }
   overflow: hidden;
 }
 .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.team-name { font-size: 18px; font-weight: 600; color: var(--text-title); }
+.team-name { font-size: 18px; font-weight: 600; color: var(--heading); }
 .team-role { font-size: 13px; color: var(--accent); margin-top: 4px; }
 .team-research { font-size: 13px; color: var(--text-secondary); margin-top: 8px; }
 .team-bio { font-size: 12px; color: var(--text-secondary); margin-top: 8px; line-height: 1.6; }
@@ -373,7 +378,7 @@ img { max-width: 100%; height: auto; }
   border-bottom: 1px solid var(--border);
 }
 .join-tier:last-child { border-bottom: none; }
-.join-tier-title { font-size: 24px; font-weight: 700; color: var(--accent); margin-bottom: 24px; }
+.join-tier-title { font-size: 24px; font-weight: 700; color: var(--heading); margin-bottom: 24px; }
 .join-subtitle { font-size: 16px; font-weight: 600; color: var(--text-heading); margin-bottom: 12px; }
 .join-list { list-style: none; padding: 0; }
 .join-list li {
@@ -388,7 +393,7 @@ img { max-width: 100%; height: auto; }
   background: var(--card-bg); border: 1px solid var(--border);
   border-radius: 8px; padding: 28px 32px; margin-top: 32px;
 }
-.join-contact h3 { font-size: 20px; color: var(--text-heading); margin-bottom: 16px; }
+.join-contact h3 { font-size: 20px; color: var(--heading); margin-bottom: 16px; }
 .join-contact p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
 .join-highlight { font-size: 15px; color: var(--accent-2); margin-bottom: 20px; font-weight: 600; }
 
@@ -412,13 +417,15 @@ img { max-width: 100%; height: auto; }
 
 /* ===== Post Detail ===== */
 .post-header { margin-bottom: 32px; }
-.post-title { font-size: 28px; font-weight: 700; color: var(--text-heading); line-height: 1.4; }
+.post-title { font-size: 28px; font-weight: 700; color: var(--heading); line-height: 1.4; }
 .post-meta { font-size: 14px; color: var(--text-secondary); margin-top: 12px; }
 .post-meta .post-tag { color: var(--accent); }
 .post-content { font-size: 15px; line-height: 1.8; color: var(--text); }
-.post-content h2 { font-size: 22px; color: var(--text-heading); margin: 28px 0 16px; }
-.post-content h3 { font-size: 18px; color: var(--text-title); margin: 24px 0 12px; }
+.post-content h2 { font-size: 22px; color: var(--heading); margin: 28px 0 16px; }
+.post-content h3 { font-size: 18px; color: var(--heading); margin: 24px 0 12px; }
 .post-content p { margin-bottom: 16px; }
+/* 中文正文段首行缩进两字符；:lang(zh) 按 BCP47 前缀匹配 zh-CN，英文页 lang="en" 不受影响 */
+.post-content p:lang(zh), .research-desc:lang(zh), .join-contact p:lang(zh) { text-indent: 2em; }
 .post-content ul, .post-content ol { margin: 16px 0; padding-left: 24px; }
 .post-content li { margin-bottom: 8px; }
 .post-content code { background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-size: 13px; }
@@ -428,7 +435,7 @@ img { max-width: 100%; height: auto; }
   display: flex; align-items: center; justify-content: center;
   min-height: calc(100vh - 80px); text-align: center;
 }
-.page-404 h1 { font-size: 72px; color: var(--accent); margin-bottom: 16px; }
+.page-404 h1 { font-size: 72px; color: var(--heading); margin-bottom: 16px; }
 .page-404 p { font-size: 18px; color: var(--text-secondary); margin-bottom: 24px; }
 
 /* ===== Back link ===== */
