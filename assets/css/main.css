@@ -1,65 +1,78 @@
-/* ===== QCL Dark Emerald Theme (default) ===== */
+/* ===== QCL Deep Indigo & Gold Theme (default) ===== */
+/* 黄蓝改版（2026-11-27）：蓝（结构与链接）＋琥珀金（成果时刻），呼应 hero 背景图
+   里冰蓝实验室与金铜色稀释制冷机自身的配色。全部文字/背景组合 WCAG AA 实测过，
+   数字见各行注释。 */
 
 :root {
-  --bg: #080c10;
-  --card-bg: #0c1218;
-  --border: #1a2530;
-  --border-hover: #2a4a3a;
-  --accent: #4adeaa;
-  --accent-hover: #3cc898;
-  --text: #c8d0d8;
-  /* 文字三级都要过 WCAG AA（正文 4.5:1）。改前实测：secondary #6a7a72 = 4.16:1、
-     dim #445(=#444455) = 2.06:1，都不达标；且 dim 提到达标后会亮过 secondary，
-     所以两级一起提，保住 dim < secondary 的层次。 */
-  --text-secondary: #7a8880;
-  --text-title: #d0ddd5;
-  --text-heading: #e0e8e4;
-  --text-dim: #757f8a;
-  --nav-bg: rgba(8, 12, 16, 0.95);
-  --nav-link: #889;
-  --tag-bg: #0a1a14;
-  --tag-color: #628a76;   /* 改前 #4a6a5a 对标签底色只有 2.99:1，现 4.63:1 */
-  --tag-border: #1a3a2a;
-  --code-bg: #1a2530;
-  --input-bg: #0a0e14;
-  --avatar-bg: #1a2530;
-  --avatar-border: #2a3a30;
+  --bg: #0a1024;
+  /* 页首一道极淡的「靛蓝晨光」，340px 内淡出——暗而不闷的关键 */
+  --bg-image: linear-gradient(180deg, #15204a 0%, #0a1024 340px);
+  --card-bg: #111b3a;
+  --border: #24345e;
+  --border-hover: #4d6cc2;
+  --accent: #7db5ff;       /* 对 bg 8.92:1、对卡底 7.99:1 */
+  --accent-hover: #a8cbff; /* 暗色主题 hover 提亮而非压暗，观感更亮堂 */
+  --accent-2: #ffcf5c;     /* 琥珀金：只落在日期/标签/徽章/分隔线等成果时刻；对卡底 11.54:1 */
+  --on-accent: #0a1024;
+  --on-accent-2: #241a05;
+  --text: #cdd7ee;
+  /* 文字三级都要过 WCAG AA（正文 4.5:1）。2026-11-27 改版实测：
+     text/卡底 11.72、secondary/卡底 6.45、dim/卡底 5.01，dim < secondary 层次保住。 */
+  --text-secondary: #8fa0c6;
+  --text-title: #dde6fa;
+  --text-heading: #e9effd;
+  --text-dim: #7e8bb2;
+  --nav-bg: rgba(10, 16, 36, 0.92);
+  --nav-link: #98a6cf;     /* 对 bg 7.81:1 */
+  --tag-bg: #2b2312;
+  --tag-color: #ecd07a;    /* 对 tag-bg 10.26:1 */
+  --tag-border: #55431a;
+  --code-bg: #182450;
+  --input-bg: #0b1230;
+  --avatar-bg: #182450;
+  --avatar-border: #32427a;
   --error-bg: #1a1014;
   --error-border: #3a1a2a;
   --error-color: #e06060;
-  --dropdown-shadow: rgba(0,0,0,0.4);
-  --hero-overlay-top: rgba(8,12,16,0.55);
-  --hero-overlay-bottom: rgba(8,12,16,0.82);
+  --dropdown-shadow: rgba(0, 0, 12, 0.5);
+  --card-lift-shadow: 0 10px 28px rgba(4, 8, 24, 0.45);
+  --hero-overlay-top: rgba(16, 24, 58, 0.42);
+  --hero-overlay-bottom: rgba(9, 13, 36, 0.80);
 }
 
-/* ===== Classic Academic White Theme ===== */
+/* ===== Classic Academic White Theme（蓝金浅色版） ===== */
 [data-theme="light"] {
   --bg: #ffffff;
-  --card-bg: #f7f8fa;
-  --border: #e0e4e8;
-  --border-hover: #b0c4b8;
-  --accent: #178050;   /* 链接色对白底 4.95:1、对卡底 4.65:1（改前 #1a8a5a = 4.35:1） */
-  --accent-hover: #14704a;
-  --text: #3a4048;
-  --text-secondary: #646f7a;   /* 4.81:1 on card-bg（改前 #6a7580 = 4.41:1） */
-  --text-title: #1a2030;
-  --text-heading: #0a1520;
-  --text-dim: #66717c;         /* 4.67:1 on card-bg（改前 #99a0a8 = 2.48:1） */
+  --bg-image: none;
+  --card-bg: #f5f7fd;
+  --border: #dfe5f3;
+  --border-hover: #a3b8ea;
+  --accent: #1c5bd1;      /* 链接色对白底 6.06:1、对卡底 5.66:1 */
+  --accent-hover: #16479f;
+  --accent-2: #8a5f00;    /* 对白底 5.65:1、对卡底 5.27:1 */
+  --on-accent: #ffffff;
+  --on-accent-2: #ffffff;
+  --text: #363e55;
+  --text-secondary: #5b6780;   /* 5.30:1 on card-bg */
+  --text-title: #141b33;
+  --text-heading: #0d1329;
+  --text-dim: #5d6880;         /* 5.22:1 on card-bg */
   --nav-bg: rgba(255, 255, 255, 0.95);
-  --nav-link: #555d68;
-  --tag-bg: #eef6f2;
-  --tag-color: #2a6a4a;
-  --tag-border: #c0dcd0;
-  --code-bg: #f0f2f5;
-  --input-bg: #f5f6f8;
-  --avatar-bg: #eef0f2;
-  --avatar-border: #d0d8dc;
+  --nav-link: #4a5573;
+  --tag-bg: #fbf1d2;
+  --tag-color: #7a5800;        /* 5.77:1 on tag-bg */
+  --tag-border: #e9d9a6;
+  --code-bg: #eef1fa;
+  --input-bg: #f5f7fc;
+  --avatar-bg: #e8edf9;
+  --avatar-border: #c9d5ee;
   --error-bg: #fef2f2;
   --error-border: #fca5a5;
   --error-color: #dc2626;
   --dropdown-shadow: rgba(0,0,0,0.1);
-  --hero-overlay-top: rgba(0,0,0,0.35);
-  --hero-overlay-bottom: rgba(0,0,0,0.6);
+  --card-lift-shadow: 0 10px 28px rgba(30, 40, 90, 0.12);
+  --hero-overlay-top: rgba(18, 28, 72, 0.32);
+  --hero-overlay-bottom: rgba(10, 16, 44, 0.58);
 }
 
 /* Theme transition */
@@ -73,6 +86,8 @@ body, .nav, .news-item, .research-card, .team-card, .paper-item,
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
   color: var(--text);
   font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   /* 基准字号只作兜底：站内几乎所有元素都显式写 px，实测无任何可见元素依赖它。
@@ -88,13 +103,14 @@ body {
 main { flex: 1 0 auto; }
 .skip-link {
   position: absolute; top: -100%; left: 0;
-  background: var(--accent); color: #080c10;
+  background: var(--accent); color: var(--on-accent);
   padding: 8px 16px; z-index: 1000; font-size: 14px;
 }
 .skip-link:focus { top: 0; }
 a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--accent-hover); }
 img { max-width: 100%; height: auto; }
+::selection { background: var(--accent-2); color: var(--on-accent-2); }
 
 /* ===== Navigation ===== */
 .nav {
@@ -141,7 +157,7 @@ img { max-width: 100%; height: auto; }
   display: block; padding: 10px 20px;
   color: var(--nav-link); font-size: 14px;
 }
-.nav-dropdown a:hover { color: var(--accent); background: rgba(74,222,170,0.05); }
+.nav-dropdown a:hover { color: var(--accent); background: rgba(125,181,255,0.10); }
 
 /* Language toggle */
 .lang-toggle {
@@ -185,16 +201,16 @@ img { max-width: 100%; height: auto; }
 .hero-content { position: relative; z-index: 2; text-align: center; }
 .hero-title {
   font-size: 100px; font-weight: 800; color: #fff;
-  letter-spacing: 16px; text-shadow: 0 0 80px rgba(74,222,170,0.15);
+  letter-spacing: 16px; text-shadow: 0 0 80px rgba(125,181,255,0.32);
 }
-.hero-subtitle { font-size: 30px; color: #d0e8dc; margin-top: 16px; letter-spacing: 8px; font-weight: 300; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
-.hero-subtitle-en { font-size: 18px; color: #a0c0b0; margin-top: 8px; letter-spacing: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-.hero-affiliation { font-size: 14px; color: #90b0a0; margin-top: 10px; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+.hero-subtitle { font-size: 30px; color: #d8e4ff; margin-top: 16px; letter-spacing: 8px; font-weight: 300; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+.hero-subtitle-en { font-size: 18px; color: #aec6f0; margin-top: 8px; letter-spacing: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+.hero-affiliation { font-size: 14px; color: #96b0e4; margin-top: 10px; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
 .hero-divider {
-  width: 100px; height: 2px; margin: 28px auto;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  width: 120px; height: 2px; margin: 28px auto;
+  background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
 }
-.hero-desc { font-size: 18px; color: #c0d8cc; max-width: 520px; margin: 0 auto; line-height: 1.8; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+.hero-desc { font-size: 18px; color: #cbd9f5; max-width: 520px; margin: 0 auto; line-height: 1.8; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
 
 /* ===== Container & Sections ===== */
 .container { max-width: 1000px; margin: 0 auto; padding: 48px 40px; }
@@ -206,8 +222,8 @@ img { max-width: 100%; height: auto; }
 }
 .section-title::before {
   content: ''; display: inline-block; width: 4px; height: 24px;
-  background: var(--accent); margin-right: 14px;
-  vertical-align: middle; border-radius: 2px;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+  margin-right: 14px; vertical-align: middle; border-radius: 2px;
 }
 .page-title { font-size: 36px; font-weight: 700; color: var(--text-heading); margin-bottom: 12px; }
 .page-subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 48px; }
@@ -216,11 +232,15 @@ img { max-width: 100%; height: auto; }
 .news-list { display: flex; flex-direction: column; gap: 24px; }
 .news-item {
   background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 8px; padding: 28px 32px; transition: border-color 0.2s;
+  border-radius: 8px; padding: 28px 32px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.news-item:hover { border-color: var(--border-hover); }
+.news-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px); box-shadow: var(--card-lift-shadow);
+}
 .news-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-.news-date { font-size: 14px; color: var(--accent); }
+.news-date { font-size: 14px; color: var(--accent-2); }
 .news-tag {
   font-size: 11px; color: var(--tag-color); background: var(--tag-bg);
   padding: 3px 10px; border-radius: 10px; border: 1px solid var(--tag-border);
@@ -235,10 +255,14 @@ img { max-width: 100%; height: auto; }
 .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
 .research-card {
   background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 8px; overflow: hidden; transition: border-color 0.2s;
+  border-radius: 8px; overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   text-decoration: none; display: block;
 }
-.research-card:hover { border-color: var(--border-hover); }
+.research-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px); box-shadow: var(--card-lift-shadow);
+}
 .research-card-img { width: 100%; height: 160px; overflow: hidden; }
 .research-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
 .research-card:hover .research-card-img img { transform: scale(1.05); }
@@ -258,8 +282,8 @@ img { max-width: 100%; height: auto; }
   flex-wrap: wrap; gap: 8px; margin-bottom: 14px;
 }
 .funding-badge {
-  display: inline-block; font-size: 13px; color: var(--accent);
-  border: 1px solid var(--accent); border-radius: 999px;
+  display: inline-block; font-size: 13px; color: var(--accent-2);
+  border: 1px solid var(--accent-2); border-radius: 999px;
   padding: 3px 12px;
 }
 .funding-number { font-size: 14px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
@@ -284,9 +308,13 @@ img { max-width: 100%; height: auto; }
 .paper-list { display: flex; flex-direction: column; gap: 12px; }
 .paper-item {
   background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 6px; padding: 16px 20px; transition: border-color 0.2s;
+  border-radius: 6px; padding: 16px 20px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.paper-item:hover { border-color: var(--border-hover); }
+.paper-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-1px); box-shadow: var(--card-lift-shadow);
+}
 .paper-title { font-size: 15px; font-weight: 600; color: var(--text-title); margin-bottom: 6px; line-height: 1.4; }
 .paper-meta { font-size: 13px; color: var(--text-secondary); }
 .paper-meta .journal { color: var(--accent); }
@@ -308,9 +336,13 @@ img { max-width: 100%; height: auto; }
 .team-card {
   background: var(--card-bg); border: 1px solid var(--border);
   border-radius: 8px; padding: 24px; text-align: center;
-  transition: border-color 0.2s; text-decoration: none; display: block;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  text-decoration: none; display: block;
 }
-.team-card:hover { border-color: var(--border-hover); }
+.team-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px); box-shadow: var(--card-lift-shadow);
+}
 .team-avatar {
   width: 110px; height: 110px; border-radius: 50%; background: var(--avatar-bg);
   margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;
@@ -358,7 +390,7 @@ img { max-width: 100%; height: auto; }
 }
 .join-contact h3 { font-size: 20px; color: var(--text-heading); margin-bottom: 16px; }
 .join-contact p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
-.join-highlight { font-size: 15px; color: var(--accent); margin-bottom: 20px; font-weight: 600; }
+.join-highlight { font-size: 15px; color: var(--accent-2); margin-bottom: 20px; font-weight: 600; }
 
 /* ===== Footer ===== */
 .footer {
@@ -463,4 +495,13 @@ img { max-width: 100%; height: auto; }
    728px 宽的单列卡片配居中短文本会显得很空。放在其后以覆盖。 */
 @media (min-width: 601px) and (max-width: 768px) {
   .research-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 动效尊重系统偏好：用户要求减少动效时，收掉全部过渡与平滑滚动 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }
